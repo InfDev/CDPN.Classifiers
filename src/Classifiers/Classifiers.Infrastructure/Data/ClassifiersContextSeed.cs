@@ -36,6 +36,34 @@ namespace CDPN.Classifiers.Infrastructure.Data
                     await ClassifiersContext.SaveChangesAsync();
                 }
 
+                if (!await ClassifiersContext.AtdLevels.AnyAsync())
+                {
+                    await ClassifiersContext.AtdLevels.AddRangeAsync(GetPreconfiguredAtdLevels());
+
+                    await ClassifiersContext.SaveChangesAsync();
+                }
+
+                if (!await ClassifiersContext.AtdCategories.AnyAsync())
+                {
+                    await ClassifiersContext.AtdCategories.AddRangeAsync(GetPreconfiguredAtdCategories());
+
+                    await ClassifiersContext.SaveChangesAsync();
+                }
+
+                if (!await ClassifiersContext.AtdUnits.AnyAsync())
+                {
+                    await ClassifiersContext.AtdUnits.AddRangeAsync(GetPreconfiguredAtdUnits());
+
+                    await ClassifiersContext.SaveChangesAsync();
+                }
+
+                if (!await ClassifiersContext.PaperSizes.AnyAsync())
+                {
+                    await ClassifiersContext.PaperSizes.AddRangeAsync(GetPreconfiguredPaperSizes());
+
+                    await ClassifiersContext.SaveChangesAsync();
+                }
+
                 if (!await ClassifiersContext.RegionLevels.AnyAsync())
                 {
                     await ClassifiersContext.RegionLevels.AddRangeAsync(GetPreconfiguredRegionLevels());
@@ -50,12 +78,6 @@ namespace CDPN.Classifiers.Infrastructure.Data
                     await ClassifiersContext.SaveChangesAsync();
                 }
 
-                if (!await ClassifiersContext.PaperSizes.AnyAsync())
-                {
-                    await ClassifiersContext.PaperSizes.AddRangeAsync(GetPreconfiguredPaperSizes());
-
-                    await ClassifiersContext.SaveChangesAsync();
-                }
             }
             catch (Exception ex)
             {

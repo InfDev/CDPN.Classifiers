@@ -26,12 +26,15 @@ namespace CDPN.Classifiers.Infrastructure.Data
 
         public DbSet<Currency> Currencies { get; set; }
         public DbSet<Country> Countries { get; set; }
-        public DbSet<RegionLevel> RegionLevels { get; set; }
-        public DbSet<Region> Regions { get; set; }
+
+        public DbSet<AtdLevel> AtdLevels { get; set; }
+        public DbSet<AtdCategory> AtdCategories { get; set; }
+        public DbSet<AtdUnit> AtdUnits { get; set; }
+
         public DbSet<PaperSize> PaperSizes { get; set; }
 
-        public DbSet<AdminTerritorialCategory> AdminTerritorialCategories { get; set; }
-
+        public DbSet<RegionLevel> RegionLevels { get; set; }
+        public DbSet<Region> Regions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -40,9 +43,15 @@ namespace CDPN.Classifiers.Infrastructure.Data
 
             builder.ApplyConfiguration(new Config.CurrencyConfiguration());
             builder.ApplyConfiguration(new Config.CountryConfiguration());
+
+            builder.ApplyConfiguration(new Config.AtdLevelConfiguration());
+            builder.ApplyConfiguration(new Config.AtdCategoryConfiguration());
+            builder.ApplyConfiguration(new Config.AtdUnitConfiguration());
+
+            builder.ApplyConfiguration(new Config.PaperSizeConfiguration());
+
             builder.ApplyConfiguration(new Config.RegionLevelConfiguration());
             builder.ApplyConfiguration(new Config.RegionConfiguration());
-            builder.ApplyConfiguration(new Config.PaperSizeConfiguration());
         }
     }
 }
