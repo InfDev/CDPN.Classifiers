@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dd932972-fdd9-4743-8608-73513d2c569e</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <AssemblyName>CDPN.$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>CDPN.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+    <PackageReference Include="Polly" Version="7.2.2" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Classifiers.Core\Classifiers.Core.csproj" />
+    <ProjectReference Include="..\Classifiers.Infrastructure.MySQL\Classifiers.Infrastructure.MySql.csproj" />
+    <ProjectReference Include="..\Classifiers.Infrastructure.PostgreSQL\Classifiers.Infrastructure.PostgreSQL.csproj" />
+    <ProjectReference Include="..\Classifiers.Infrastructure.Sqlite\Classifiers.Infrastructure.Sqlite.csproj" />
+    <ProjectReference Include="..\Classifiers.Infrastructure.SqlServer\Classifiers.Infrastructure.SqlServer.csproj" />
+    <ProjectReference Include="..\Classifiers.Infrastructure\Classifiers.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
