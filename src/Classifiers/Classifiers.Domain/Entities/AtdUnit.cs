@@ -6,7 +6,9 @@ namespace CDPN.Classifiers.Entities
     /// <summary>
     /// Сущность "Единица административно-территориального деления"
     /// </summary>
-    /// <remarks>АТУ - административно-территориальное устройство (Atd - Administrative and territorial divisions)</remarks>
+    /// <remarks>Адміністративно-територіальний устрій України: https://atu.decentralization.gov.ua/. 
+    /// АТУ, англ. Atd - Administrative and territorial divisions)
+    /// </remarks>
     public class AtdUnit : BaseEntity
     {
         /// <summary>

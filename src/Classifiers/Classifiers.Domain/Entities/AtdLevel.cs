@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CDPN.Classifiers.Entities
 {
-    // 
     /// <summary>
     /// Сущность "Уровень административно-территориального деления"
     /// </summary>
+    /// <remarks>Адміністративно-територіальний устрій України: https://atu.decentralization.gov.ua/</remarks>
     public class AtdLevel : BaseEntity
     {
         /// <summary>
