@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
-    [Migration("20211101170316_InitialCreate")]
+    [Migration("20211102191129_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,11 +92,7 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Alpha2")
-                        .IsRequired()
+                    b.Property<string>("Id")
                         .HasMaxLength(2)
                         .HasColumnType("TEXT")
                         .IsFixedLength();
@@ -121,12 +117,15 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("NumericCode")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Alpha2")
+                    b.HasIndex("Alpha3")
                         .IsUnique();
 
-                    b.HasIndex("Alpha3")
+                    b.HasIndex("NumericCode")
                         .IsUnique();
 
                     b.ToTable("StdCountry", (string)null);

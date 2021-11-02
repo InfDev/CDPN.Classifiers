@@ -11,22 +11,22 @@ namespace CDPN.Classifiers.Infrastructure.Data.Config
             builder.ToTable(DbContextConsts.DbTablePrefix + nameof(Country));
             builder.HasKey(e => e.Id);
 
+            builder.HasIndex(e => e.Alpha2).IsUnique();
             builder.HasIndex(e => e.Alpha3).IsUnique();
-            builder.HasIndex(e => e.NumericCode).IsUnique();
 
             builder.Property(e => e.Id)
-               .HasMaxLength(2)
-               .IsFixedLength()
                .IsRequired()
                .ValueGeneratedNever();
+
+            builder.Property(e => e.Alpha2)
+                .IsRequired()
+                .HasMaxLength(2)
+                .IsFixedLength();
 
             builder.Property(e => e.Alpha3)
                 .IsRequired()
                 .HasMaxLength(3)
                 .IsFixedLength();
-
-            builder.Property(e => e.NumericCode)
-                .IsRequired();
 
             builder.Property(e => e.Group)
                 .IsRequired()

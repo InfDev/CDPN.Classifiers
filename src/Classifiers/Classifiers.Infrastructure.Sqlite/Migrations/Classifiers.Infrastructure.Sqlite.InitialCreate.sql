@@ -18,9 +18,9 @@ CREATE TABLE "StdAtdLevel" (
 );
 
 CREATE TABLE "StdCountry" (
-    "Id" INTEGER NOT NULL CONSTRAINT "PK_StdCountry" PRIMARY KEY,
-    "Alpha2" TEXT NOT NULL,
+    "Id" TEXT NOT NULL CONSTRAINT "PK_StdCountry" PRIMARY KEY,
     "Alpha3" TEXT NOT NULL,
+    "NumericCode" INTEGER NOT NULL,
     "Group" INTEGER NOT NULL DEFAULT 0,
     "Name" TEXT NOT NULL,
     "CurrencyId" TEXT NULL
@@ -74,16 +74,16 @@ CREATE INDEX "IX_StdAtdUnit_AtdLevelId" ON "StdAtdUnit" ("AtdLevelId");
 
 CREATE INDEX "IX_StdAtdUnit_ParentId" ON "StdAtdUnit" ("ParentId");
 
-CREATE UNIQUE INDEX "IX_StdCountry_Alpha2" ON "StdCountry" ("Alpha2");
-
 CREATE UNIQUE INDEX "IX_StdCountry_Alpha3" ON "StdCountry" ("Alpha3");
+
+CREATE UNIQUE INDEX "IX_StdCountry_NumericCode" ON "StdCountry" ("NumericCode");
 
 CREATE UNIQUE INDEX "IX_StdCurrency_NumericCode" ON "StdCurrency" ("NumericCode");
 
 CREATE INDEX "IX_StdRegion_RegionLevelId" ON "StdRegion" ("RegionLevelId");
 
 INSERT INTO "__Std_EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20211101170316_InitialCreate', '6.0.0-rc.2.21480.5');
+VALUES ('20211102191129_InitialCreate', '6.0.0-rc.2.21480.5');
 
 COMMIT;
 

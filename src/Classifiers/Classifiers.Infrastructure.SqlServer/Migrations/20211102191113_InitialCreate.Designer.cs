@@ -3,32 +3,34 @@ using System;
 using CDPN.Classifiers.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
+namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
-    [Migration("20211101170330_InitialCreate")]
+    [Migration("20211102191113_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.11");
+                .HasAnnotation("Relational:MaxIdentifierLength", 128)
+                .HasAnnotation("ProductVersion", "5.0.11")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdCategory", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)");
+                        .HasColumnType("nvarchar(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -49,7 +51,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -60,12 +62,12 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("AtdCategoryId")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)");
+                        .HasColumnType("nvarchar(1)");
 
                     b.Property<int>("AtdLevelId")
                         .HasColumnType("int");
@@ -73,11 +75,11 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
@@ -92,24 +94,20 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Alpha2")
-                        .IsRequired()
+                    b.Property<string>("Id")
                         .HasMaxLength(2)
-                        .HasColumnType("char(2)")
+                        .HasColumnType("nchar(2)")
                         .IsFixedLength(true);
 
                     b.Property<string>("Alpha3")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("char(3)")
+                        .HasColumnType("nchar(3)")
                         .IsFixedLength(true);
 
                     b.Property<string>("CurrencyId")
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)");
+                        .HasColumnType("nvarchar(3)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
@@ -119,14 +117,17 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("NumericCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Alpha2")
+                    b.HasIndex("Alpha3")
                         .IsUnique();
 
-                    b.HasIndex("Alpha3")
+                    b.HasIndex("NumericCode")
                         .IsUnique();
 
                     b.ToTable("StdCountry");
@@ -135,7 +136,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Currency", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
@@ -148,7 +149,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("NumericCode")
                         .HasColumnType("int");
@@ -169,14 +170,14 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Format")
                         .IsRequired()
                         .HasMaxLength(8)
-                        .HasColumnType("varchar(8)");
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<int>("Height")
                         .HasColumnType("int");
 
                     b.Property<string>("Use")
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("Width")
                         .HasColumnType("int");
@@ -189,16 +190,16 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Region", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Center")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("CountryClassifierId")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CountryId")
                         .HasColumnType("int");
@@ -206,7 +207,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int>("RegionLevelId")
                         .HasColumnType("int");
@@ -226,7 +227,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

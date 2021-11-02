@@ -92,11 +92,7 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Alpha2")
-                        .IsRequired()
+                    b.Property<string>("Id")
                         .HasMaxLength(2)
                         .HasColumnType("character(2)")
                         .IsFixedLength(true);
@@ -121,12 +117,15 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
+                    b.Property<int>("NumericCode")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Alpha2")
+                    b.HasIndex("Alpha3")
                         .IsUnique();
 
-                    b.HasIndex("Alpha3")
+                    b.HasIndex("NumericCode")
                         .IsUnique();
 
                     b.ToTable("StdCountry");

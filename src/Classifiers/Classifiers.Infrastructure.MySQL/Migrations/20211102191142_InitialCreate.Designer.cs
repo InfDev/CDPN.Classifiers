@@ -5,32 +5,30 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
-namespace Classifiers.Infrastructure.PostgreSQL.Migrations
+namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
-    [Migration("20211101170344_InitialCreate")]
+    [Migration("20211102191142_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.11")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .HasAnnotation("ProductVersion", "5.0.11");
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdCategory", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(1)
-                        .HasColumnType("character varying(1)");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("varchar(200)");
 
                     b.HasKey("Id");
 
@@ -40,18 +38,18 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("InUnitIdStartIndex")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<int>("InUnitIdStoptIndex")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("varchar(200)");
 
                     b.HasKey("Id");
 
@@ -62,24 +60,24 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("AtdCategoryId")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("character varying(1)");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<int>("AtdLevelId")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -94,41 +92,40 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Alpha2")
-                        .IsRequired()
+                    b.Property<string>("Id")
                         .HasMaxLength(2)
-                        .HasColumnType("character(2)")
+                        .HasColumnType("char(2)")
                         .IsFixedLength(true);
 
                     b.Property<string>("Alpha3")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("character(3)")
+                        .HasColumnType("char(3)")
                         .IsFixedLength(true);
 
                     b.Property<string>("CurrencyId")
                         .HasMaxLength(3)
-                        .HasColumnType("character varying(3)");
+                        .HasColumnType("varchar(3)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
+                        .HasColumnType("int")
                         .HasDefaultValue(0);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("NumericCode")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Alpha2")
+                    b.HasIndex("Alpha3")
                         .IsUnique();
 
-                    b.HasIndex("Alpha3")
+                    b.HasIndex("NumericCode")
                         .IsUnique();
 
                     b.ToTable("StdCountry");
@@ -137,23 +134,23 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Currency", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
+                        .HasColumnType("int")
                         .HasDefaultValue(0);
 
                     b.Property<int?>("MinorUnit")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("NumericCode")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -166,22 +163,22 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.PaperSize", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Format")
                         .IsRequired()
                         .HasMaxLength(8)
-                        .HasColumnType("character varying(8)");
+                        .HasColumnType("varchar(8)");
 
                     b.Property<int>("Height")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Use")
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)");
+                        .HasColumnType("varchar(200)");
 
                     b.Property<int>("Width")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -191,27 +188,27 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Region", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("text");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Center")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("CountryClassifierId")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("CountryId")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("RegionLevelId")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -223,12 +220,12 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.RegionLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("integer");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

@@ -9,23 +9,19 @@ namespace CDPN.Classifiers.Entities
     public class Country : BaseEntity
     {
         /// <summary>
-        /// Идентификатор, соответствуют ISO 3166-1 numeric 
+        /// Идентификатор, соответствуют ISO 3166-1 alpha2 
         /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
-        /// Код страны по ISO 3166-1 alpha-2
-        /// </summary>
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Двухбуквенный код страны обязателен"), StringLength(2, MinimumLength = 2, ErrorMessage = "Трехбуквенный код страны должен состоять из 2-х символов")]
-        //[Display(Name = "Alpha-2")]
-        public string Alpha2 { get; set; }
+        public string Id { get; set; }
 
         /// <summary>
         /// Код страны по ISO 3166-1 alpha-3
         /// </summary>
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Трехбуквенный код страны обязателен"), StringLength(3, MinimumLength = 3, ErrorMessage = "Трехбуквенный код страны должен состоять из 3-х символов")]
-        //[Display(Name = "Alpha-3")]
         public string Alpha3 { get; set; }
+
+        /// <summary>
+        /// Код страны по ISO 3166-1 numeric code
+        /// </summary>
+         public int NumericCode { get; set; }
 
         /// <summary>
         /// Группа страны
@@ -36,8 +32,6 @@ namespace CDPN.Classifiers.Entities
         /// <summary>
         /// Наименование страны
         /// </summary>
-        //[Required(AllowEmptyStrings = false, ErrorMessage = "Наименование страны обязательно"), StringLength(100, MinimumLength = 3, ErrorMessage = "Длина наименования страны должна быть в диапазоне 3..100")]
-        //[Display(Name = "Наименование")]
         public string Name { get; set; }
 
         /// <summary>
@@ -51,9 +45,9 @@ namespace CDPN.Classifiers.Entities
         /// </summary>
         //[Display(Name = "Геокоды страны по ISO")]
         [JsonIgnore]
-        public string GetGeoCodesIso => "ISO 3166-2:" + Alpha2;
+        public string GetIsoGeoCode => "ISO 3166-2:" + Id;
 
         [JsonIgnore]
-        public override string GetKey => Id.ToString();
+        public override string GetKey => Id;
     }
 }

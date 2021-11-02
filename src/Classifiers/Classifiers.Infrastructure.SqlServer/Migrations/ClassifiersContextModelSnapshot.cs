@@ -92,11 +92,7 @@ namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Alpha2")
-                        .IsRequired()
+                    b.Property<string>("Id")
                         .HasMaxLength(2)
                         .HasColumnType("nchar(2)")
                         .IsFixedLength(true);
@@ -121,12 +117,15 @@ namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("NumericCode")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("Alpha2")
+                    b.HasIndex("Alpha3")
                         .IsUnique();
 
-                    b.HasIndex("Alpha3")
+                    b.HasIndex("NumericCode")
                         .IsUnique();
 
                     b.ToTable("StdCountry");

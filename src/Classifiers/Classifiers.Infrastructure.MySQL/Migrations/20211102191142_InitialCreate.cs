@@ -44,11 +44,11 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                 name: "StdCountry",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false),
-                    Alpha2 = table.Column<string>(type: "char(2)", fixedLength: true, maxLength: 2, nullable: false)
+                    Id = table.Column<string>(type: "char(2)", fixedLength: true, maxLength: 2, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Alpha3 = table.Column<string>(type: "char(3)", fixedLength: true, maxLength: 3, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
+                    NumericCode = table.Column<int>(type: "int", nullable: false),
                     Group = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
                     Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -192,15 +192,15 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                 column: "ParentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StdCountry_Alpha2",
-                table: "StdCountry",
-                column: "Alpha2",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_StdCountry_Alpha3",
                 table: "StdCountry",
                 column: "Alpha3",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StdCountry_NumericCode",
+                table: "StdCountry",
+                column: "NumericCode",
                 unique: true);
 
             migrationBuilder.CreateIndex(

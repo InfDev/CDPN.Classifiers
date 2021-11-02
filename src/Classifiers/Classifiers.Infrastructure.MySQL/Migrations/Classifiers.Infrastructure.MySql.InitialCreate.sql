@@ -11,7 +11,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     ALTER DATABASE CHARACTER SET utf8mb4;
 
@@ -26,7 +26,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdAtdCategory` (
         `Id` varchar(1) CHARACTER SET utf8mb4 NOT NULL,
@@ -45,7 +45,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdAtdLevel` (
         `Id` int NOT NULL,
@@ -66,12 +66,12 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdCountry` (
-        `Id` int NOT NULL,
-        `Alpha2` char(2) CHARACTER SET utf8mb4 NOT NULL,
+        `Id` char(2) CHARACTER SET utf8mb4 NOT NULL,
         `Alpha3` char(3) CHARACTER SET utf8mb4 NOT NULL,
+        `NumericCode` int NOT NULL,
         `Group` int NOT NULL DEFAULT 0,
         `Name` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
         `CurrencyId` varchar(3) CHARACTER SET utf8mb4 NULL,
@@ -89,7 +89,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdCurrency` (
         `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
@@ -111,7 +111,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdPaperSize` (
         `Id` int NOT NULL,
@@ -133,7 +133,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdRegionLevel` (
         `Id` int NOT NULL,
@@ -152,7 +152,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdAtdUnit` (
         `Id` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
@@ -177,7 +177,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE TABLE `StdRegion` (
         `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
@@ -201,7 +201,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE INDEX `IX_StdAtdUnit_AtdCategoryId` ON `StdAtdUnit` (`AtdCategoryId`);
 
@@ -216,7 +216,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE INDEX `IX_StdAtdUnit_AtdLevelId` ON `StdAtdUnit` (`AtdLevelId`);
 
@@ -231,7 +231,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE INDEX `IX_StdAtdUnit_ParentId` ON `StdAtdUnit` (`ParentId`);
 
@@ -246,22 +246,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
-
-    CREATE UNIQUE INDEX `IX_StdCountry_Alpha2` ON `StdCountry` (`Alpha2`);
-
-    END IF;
-END //
-DELIMITER ;
-CALL MigrationsScript();
-DROP PROCEDURE MigrationsScript;
-
-
-DROP PROCEDURE IF EXISTS MigrationsScript;
-DELIMITER //
-CREATE PROCEDURE MigrationsScript()
-BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE UNIQUE INDEX `IX_StdCountry_Alpha3` ON `StdCountry` (`Alpha3`);
 
@@ -276,7 +261,22 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
+
+    CREATE UNIQUE INDEX `IX_StdCountry_NumericCode` ON `StdCountry` (`NumericCode`);
+
+    END IF;
+END //
+DELIMITER ;
+CALL MigrationsScript();
+DROP PROCEDURE MigrationsScript;
+
+
+DROP PROCEDURE IF EXISTS MigrationsScript;
+DELIMITER //
+CREATE PROCEDURE MigrationsScript()
+BEGIN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE UNIQUE INDEX `IX_StdCurrency_NumericCode` ON `StdCurrency` (`NumericCode`);
 
@@ -291,7 +291,7 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     CREATE INDEX `IX_StdRegion_RegionLevelId` ON `StdRegion` (`RegionLevelId`);
 
@@ -306,10 +306,10 @@ DROP PROCEDURE IF EXISTS MigrationsScript;
 DELIMITER //
 CREATE PROCEDURE MigrationsScript()
 BEGIN
-    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211101170330_InitialCreate') THEN
+    IF NOT EXISTS(SELECT 1 FROM `__Std_EFMigrationsHistory` WHERE `MigrationId` = '20211102191142_InitialCreate') THEN
 
     INSERT INTO `__Std_EFMigrationsHistory` (`MigrationId`, `ProductVersion`)
-    VALUES ('20211101170330_InitialCreate', '5.0.11');
+    VALUES ('20211102191142_InitialCreate', '5.0.11');
 
     END IF;
 END //
