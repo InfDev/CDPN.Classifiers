@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace CDPN.Common.Entities
 {
@@ -7,6 +8,7 @@ namespace CDPN.Common.Entities
         /// <summary>
         /// Строковое представления ключа/идентификатора
         /// </summary>
+        [JsonIgnore]
         public virtual string GetKey => string.Empty;
     }
 
@@ -16,6 +18,8 @@ namespace CDPN.Common.Entities
         /// Идентификатор
         /// </summary>
         public int Id { get; set; }
+        
+        [JsonIgnore]
         public override string GetKey => Id.ToString();
     }
 
@@ -25,6 +29,8 @@ namespace CDPN.Common.Entities
         /// Идентификатор
         /// </summary>
         public long Id { get; set; }
+
+        [JsonIgnore]
         public override string GetKey => Id.ToString();
     }
 
@@ -34,6 +40,8 @@ namespace CDPN.Common.Entities
         /// Идентификатор
         /// </summary>
         public string Id { get; set; }
+
+        [JsonIgnore]
         public override string GetKey => Id;
     }
 
@@ -43,6 +51,8 @@ namespace CDPN.Common.Entities
         /// Идентификатор
         /// </summary>
         public Guid Id { get; set; }
+
+        [JsonIgnore]
         public override string GetKey => Id.ToString();
     }
 

@@ -10,6 +10,7 @@ using Serilog;
 using CDPN.Common;
 using CDPN.Classifiers.Infrastructure;
 using CDPN.Classifiers.Infrastructure.Data;
+using System.Reflection;
 
 const string AppName = "Classifiers.API";
 
@@ -75,7 +76,31 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "CDPN:Classifiers API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "CDPN:Classifiers API",
+        Description = "Общие классификаторы CDPN",
+        //TermsOfService = new Uri("https://example.com/terms"),
+        Contact = new OpenApiContact
+        {
+            Name = "Александр Шляхто",
+            Email = string.Empty,
+            Url = new Uri("https://infdev.com.ua"),
+        },
+        License = new OpenApiLicense
+        {
+            Name = "Используйте под MIT",
+            Url = new Uri("https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt"),
+        }
+    });
+
+    // Set the comments path for the Swagger JSON and UI.
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    c.IncludeXmlComments(xmlPath);
+
+
     #region Swagger Security
     //c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     //{

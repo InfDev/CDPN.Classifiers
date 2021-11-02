@@ -1,4 +1,5 @@
 ﻿using CDPN.Common.Entities;
+using System.Text.Json.Serialization;
 
 namespace CDPN.Classifiers.Entities
 {
@@ -49,8 +50,10 @@ namespace CDPN.Classifiers.Entities
         /// Cтандарт ISО для геокодов страны
         /// </summary>
         //[Display(Name = "Геокоды страны по ISO")]
+        [JsonIgnore]
         public string GetGeoCodesIso => "ISO 3166-2:" + Alpha2;
 
+        [JsonIgnore]
         public override string GetKey => Id.ToString();
     }
 }

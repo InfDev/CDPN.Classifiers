@@ -3,6 +3,7 @@
 
 using CDPN.Common.Entities;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace CDPN.Classifiers.Entities
 {
@@ -25,6 +26,7 @@ namespace CDPN.Classifiers.Entities
         /// </summary>
         public string Name { get; set; }
 
+       [JsonIgnore]
         public override string GetKey => Id.ToString();
 
         /// <summary>

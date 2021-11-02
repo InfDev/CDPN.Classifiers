@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using CDPN.Common.Entities;
+using System.Text.Json.Serialization;
 
 namespace CDPN.Classifiers.Entities
 {

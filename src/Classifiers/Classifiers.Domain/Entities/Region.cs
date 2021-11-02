@@ -2,6 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using CDPN.Common.Entities;
+using System.Text.Json.Serialization;
 
 // ІНТЕРАКТИВНА МАПА. АДМІНІСТРАТИВНО - ТЕРИТОРІАЛЬНИХ ОДИНИЦЬ УКРАЇНИ
 // https://atu.decentralization.gov.ua/
@@ -50,6 +51,7 @@ namespace CDPN.Classifiers.Entities
 
         public RegionLevel RegionLevel { get; set; }
 
+        [JsonIgnore]
         public override string GetKey => Id;
     }
 }

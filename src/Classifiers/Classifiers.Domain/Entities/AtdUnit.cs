@@ -1,5 +1,6 @@
 ﻿using CDPN.Common.Entities;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace CDPN.Classifiers.Entities
 {
@@ -56,8 +57,10 @@ namespace CDPN.Classifiers.Entities
         /// </summary>
         public ICollection<AtdUnit> Childrens { get; set; }
 
+        //[JsonIgnore]
         public string GetCountryAlpha2 => Id?.Substring(0, 1);
 
+        [JsonIgnore]
         public override string GetKey => Id;
     }
 }
