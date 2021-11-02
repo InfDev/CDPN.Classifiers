@@ -80,7 +80,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = "CDPN:Classifiers API",
-        Description = "Общие классификаторы CDPN",
+        Description = "Общие классификаторы CDPN (з даними українською мовою)",
         //TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {

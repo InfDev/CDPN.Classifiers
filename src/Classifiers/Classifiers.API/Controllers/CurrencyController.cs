@@ -80,6 +80,26 @@ namespace CDPN.Classifiers.API.Controllers
         }
 
         /// <summary>
+        /// Cписок валют по строке поиска в Id и Name
+        /// </summary>
+        /// <param name="search">Строка поиска</param>
+        /// <returns></returns>
+        [HttpGet("items/by_search")]
+        [ProducesResponseType(typeof(List<Currency>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<ActionResult<List<Currency>>> CurrencyItemsSearch(string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                var pattern = $"%{search}%";
+                return await _dbContext.Currencies.Where(ci =>
+                    EF.Functions.Like(ci.Id, pattern) ||
+                    EF.Functions.Like(ci.Name, pattern)).ToListAsync();
+            }
+            return BadRequest("Не визначено рядок пошуку");
+        }
+
+        /// <summary>
         /// Валюты постранично
         /// </summary>
         /// <param name="ge_group">С группой равной или более</param>
@@ -111,6 +131,5 @@ namespace CDPN.Classifiers.API.Controllers
 
             return new PaginatedItemsViewModel<Currency>(pageIndex, pageSize, totalItems, itemsOnPage);
         }
-
     }
 }
