@@ -11,8 +11,12 @@ using CDPN.Common;
 using CDPN.Classifiers.Infrastructure;
 using CDPN.Classifiers.Infrastructure.Data;
 using System.Reflection;
+using Gridify;
 
 const string AppName = "Classifiers.API";
+
+// https://github.com/alirezanet/Gridify
+GridifyGlobalConfiguration.EnableEntityFrameworkCompatibilityLayer();
 
 #region Serilog configuration
 var configuration = GetConfiguration();
@@ -80,7 +84,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = "CDPN:Classifiers API",
-        Description = "Общие классификаторы CDPN (з даними українською мовою)",
+        Description = "Общие классификаторы CDPN (з даними українською мовою).<br />О форматах для OrderBy и Filter см. <a href=\"https://alirezanet.github.io/Gridify/\" target =\"_blank\">alirezanet.github.io/Gridify/</a>",
         //TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
