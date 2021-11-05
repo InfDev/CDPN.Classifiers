@@ -39,9 +39,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classifiers.Infrastructure.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classifiers.Infrastructure.PostgreSQL", "src\Classifiers\Classifiers.Infrastructure.PostgreSQL\Classifiers.Infrastructure.PostgreSQL.csproj", "{19068598-DBAB-46CF-8633-243E5720CCD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Core.Web", "src\Shared\Common.Core.Web\Common.Core.Web.csproj", "{B10829C9-FCB4-4A07-BFB3-DC9B4C687DAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Core.Web", "src\Shared\Common.Core.Web\Common.Core.Web.csproj", "{B10829C9-FCB4-4A07-BFB3-DC9B4C687DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Core.EntityFramework", "src\Shared\Common.Core.EntityFramework\Common.Core.EntityFramework.csproj", "{76B9C6CB-178D-4EB5-BF11-91493667BEA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Core.EntityFramework", "src\Shared\Common.Core.EntityFramework\Common.Core.EntityFramework.csproj", "{76B9C6CB-178D-4EB5-BF11-91493667BEA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classifiers.Client", "src\Classifiers\Classiffers.Client\Classifiers.Client.csproj", "{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classifier.Client.UnitTests", "tests\UnitTests\Classifiers\Classifier.Client.UnitTests\Classifier.Client.UnitTests.csproj", "{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +105,14 @@ Global
 		{76B9C6CB-178D-4EB5-BF11-91493667BEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B9C6CB-178D-4EB5-BF11-91493667BEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B9C6CB-178D-4EB5-BF11-91493667BEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +135,8 @@ Global
 		{19068598-DBAB-46CF-8633-243E5720CCD6} = {D3289614-6CF9-4CB9-92F1-CE9BBF069566}
 		{B10829C9-FCB4-4A07-BFB3-DC9B4C687DAC} = {54F05AA8-CEA0-4092-A915-D3CF83E9E532}
 		{76B9C6CB-178D-4EB5-BF11-91493667BEA2} = {54F05AA8-CEA0-4092-A915-D3CF83E9E532}
+		{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3} = {D3289614-6CF9-4CB9-92F1-CE9BBF069566}
+		{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8} = {2DD1554B-2BEB-4A10-9E97-2DC9C687F8E4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {26BB52FA-8B49-432C-AF3E-D3158DCEBEAA}

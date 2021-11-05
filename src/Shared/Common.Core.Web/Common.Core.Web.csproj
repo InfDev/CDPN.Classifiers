@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>CDPN.$(MSBuildProjectName)</AssemblyName>
     <RootNamespace>CDPN.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
