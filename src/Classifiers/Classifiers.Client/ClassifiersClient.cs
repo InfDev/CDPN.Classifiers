@@ -8,14 +8,14 @@ using CDPN.Classifiers.Client.Models;
 
 namespace CDPN.Classifiers.Client
 {
-    public class ClassiffersClient
+    public class ClassifiersClient
     {
         private const int DefaultPage = 1;
         private const int DefaultPageSize = 20;
 
         private readonly HttpClient httpClient;
 
-        public ClassiffersClient(HttpClient httpClient)
+        public ClassifiersClient(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }

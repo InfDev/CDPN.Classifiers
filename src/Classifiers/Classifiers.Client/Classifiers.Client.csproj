@@ -6,4 +6,8 @@
     <AssemblyName>CDPN.$(MSBuildProjectName)</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+	<SupportedPlatform Include="browser" />
+  </ItemGroup>
+
 </Project>

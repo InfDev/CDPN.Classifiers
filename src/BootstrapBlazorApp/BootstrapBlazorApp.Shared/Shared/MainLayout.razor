@@ -1,0 +1,157 @@
+﻿@inherits LayoutComponentBase
+
+<Layout SideWidth="0" IsPage="true" ShowGotoTop="true" ShowCollapseBar="true"
+        IsFullSide="@IsFullSide" IsFixedHeader="@IsFixedHeader" IsFixedFooter="@IsFixedFooter" ShowFooter="@ShowFooter"
+        Menus="@Menus" UseTabSet="@UseTabSet" TabItemTextDictionary="@TabItemTextDictionary" AdditionalAssemblies="new[] { GetType().Assembly }" class="@Theme">
+    <Header>
+        <span class="ms-3 flex-sm-fill d-sm-block">Демо (классификаторы)</span>
+        <div class="flex-fill d-sm-none">
+        </div>
+        <div  class="d-none">
+            <Widget></Widget>
+            <img src="_content/BootstrapBlazorApp.Shared/images/Argo.png" class="layout-avatar-right" />
+            <span class="mx-3 d-sm-block">Супер-администратор</span>
+        </div>
+        <ul class="navbar-nav ms-3 d-none d-lg-flex" style="">
+            <li class="nav-item"><a class="nav-link p-2" href="https://infdev.com.ua#net" target="_blank" title="Шпаргалка разработчика ПО">
+                <img src="_content/BootstrapBlazorApp.Shared/images/info.png"></a></li>
+            <li class="nav-item"><a class="nav-link p-2" href="https://github.com/InfDev/CDPN.Classifiers" target="_blank" title="Исходники на github">
+                <img src="_content/BootstrapBlazorApp.Shared/images/git.svg"></a></li>
+        </ul>
+        <div class="layout-drawer" @onclick="@(e => IsOpen = !IsOpen)"><i class="fa fa-gears"></i></div>
+    </Header>
+    <Side>
+        <div class="layout-banner">
+            <img class="layout-logo" src="_content/BootstrapBlazorApp.Shared/images/classifiers.png" />
+            <div class="layout-title">
+                <span>КДП-К</span>
+            </div>
+        </div>
+        <div class="layout-user">
+            <img class="layout-avatar" src="_content/BootstrapBlazorApp.Shared/images/admin.png">
+            <div class="layout-title">
+                <span>Администратор</span>
+            </div>
+            <div class="layout-user-state"></div>
+        </div>
+    </Side>
+    <Main>
+        <CascadingValue Value="this" IsFixed="true">
+            @Body
+        </CascadingValue>
+    </Main>
+    <Footer>
+        <div class="text-center flex-fill page-layout-demo-footer">© 2021 А.Шляхто</div>
+    </Footer>
+    <NotFound>
+        <p>Извините, по этому адресу ничего нет.</p>
+    </NotFound>
+</Layout>
+
+<Drawer Placement="Placement.Right" @bind-IsOpen="@IsOpen" IsBackdrop="true">
+    <div class="layout-drawer-body">
+        <div class="btn btn-info w-100" @onclick="@(e => IsOpen = false)">Скрыть</div>
+        <div class="page-layout-demo-option">
+            <p>Компоновка</p>
+            <div class="row">
+                <div class="col-6">
+                    <div class="layout-item @(IsFullSide ? "active d-flex" : "d-flex")" @onclick="@(e => IsFullSide = true)" data-toggle="tooltip" title="Левая и правая">
+                        <div class="layout-left d-flex flex-column">
+                            <div class="layout-left-header"></div>
+                            <div class="layout-left-body flex-fill"></div>
+                        </div>
+                        <div class="layout-right d-flex flex-column flex-fill">
+                            <div class="layout-right-header"></div>
+                            <div class="layout-right-body flex-fill"></div>
+                            <div class="layout-right-footer"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="layout-item flex-column @(IsFullSide ? "d-flex" : "active d-flex")" @onclick="@(e => IsFullSide = false)" data-toggle="tooltip" title="Верхняя и нижняя">
+                        <div class="layout-top">
+                        </div>
+                        <div class="layout-body d-flex flex-fill">
+                            <div class="layout-left">
+                            </div>
+                            <div class="layout-right flex-fill">
+                            </div>
+                        </div>
+                        <div class="layout-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-layout-demo-option">
+            <p>Фиксация</p>
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <Switch @bind-Value="@IsFixedHeader" OnColor="@Color.Success" OffColor="@Color.Secondary"></Switch>
+                </div>
+                <div class="col-6 text-right">
+                    <span>Фиксированный заголовок</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6 d-flex align-items-center">
+                    <Switch @bind-Value="@IsFixedFooter" OnColor="@Color.Success" OffColor="@Color.Secondary"></Switch>
+                </div>
+                <div class="col-6 text-right">
+                    <span>Фиксированный нижний колонтитул</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6 d-flex align-items-center">
+                    <Switch @bind-Value="@ShowFooter" OnColor="@Color.Success" OffColor="@Color.Primary"></Switch>
+                </div>
+                <div class="col-6 text-right">
+                    <span>Показывать нижний колонтитул</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-layout-demo-option">
+            <p>Цветовая схема</p>
+            <div class="row">
+                <div class="col-2">
+                    <span class="color color1" @onclick="@(e => Theme = "color1")"></span>
+                </div>
+                <div class="col-2">
+                    <span class="color color2" @onclick="@(e => Theme = "color2")"></span>
+                </div>
+                <div class="col-2">
+                    <span class="color color3" @onclick="@(e => Theme = "color3")"></span>
+                </div>
+                <div class="col-2">
+                    <span class="color color4" @onclick="@(e => Theme = "color4")"></span>
+                </div>
+                <div class="col-2">
+                    <span class="color color5" @onclick="@(e => Theme = "color5")"></span>
+                </div>
+                <div class="col-2">
+                    <span class="color color6" @onclick="@(e => Theme = "color6")"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-layout-demo-option">
+            <p>Режим страниц</p>
+            <div class="row">
+                <div class="col-6 d-flex align-items-center">
+                    <Switch @bind-Value="@UseTabSet" OnColor="@Color.Success" OffColor="@Color.Primary"></Switch>
+                </div>
+                <div class="col-6 text-right">
+                    <span>@(UseTabSet ? "Многостраничный" : "Одностраничный")</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</Drawer>
+
+<Toast />
+<Dialog />
+<PopoverConfirm />
+<Message />
+<SweetAlert />

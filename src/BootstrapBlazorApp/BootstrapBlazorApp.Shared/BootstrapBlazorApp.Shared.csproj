@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Locales\*.json" />
+    <EmbeddedResource Include="Locales\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor" Version="5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.0-rc.2.21480.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Classifiers\Classifiers.Client\Classifiers.Client.csproj" />
+  </ItemGroup>
+
+</Project>
