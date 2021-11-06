@@ -1,6 +1,15 @@
 ﻿@page "/"
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 
-<h2>Демо веб-сервиса и веб-приложения</h2>
+<h2>Демо веб-приложения</h2>
+
+Это приложение демонстрирует варианты Blazor-приложения и 
+<a href="@openApiDocumentUrl" target="_blank">веб-сервиса "Классификаторы"</a>,
+которые разработаны на открытых технологиях .NET конца 2021 года.
+Веб-сервис соответствует <a href="http://infdev.com.ua/standards/openapi/" target="_blank">спецификации OpenAPI</a>. 
+
+<br /><br />
 
 <Row ItemsPerRow="ItemsPerRow.Three">
     <Card IsCenter="true">
@@ -50,3 +59,13 @@
         </CardBody>
     </Card>
 </Row>
+
+@code {
+    private string openApiDocumentUrl;
+
+    protected override async Task OnInitializedAsync()
+    {
+        openApiDocumentUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:OpenApiDocumentUrl");
+    }
+
+}
