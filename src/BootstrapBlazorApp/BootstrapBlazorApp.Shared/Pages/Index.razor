@@ -1,7 +1,52 @@
 ﻿@page "/"
 
-<h1>Демо веб-сервиса и веб-приложения</h1>
+<h2>Демо веб-сервиса и веб-приложения</h2>
 
-Платформа разработки и выполнения ASP.NET Core 6.0.
+<Row ItemsPerRow="ItemsPerRow.Three">
+    <Card IsCenter="true">
+        <CardBody>
+            <h5>Платформа разработки</h5>
+            <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank">.NET SDK 6.0</a><br />
+            с <a href="https://visualstudio.microsoft.com/ru/vs/" target="_blank">Visual Studio 2022</a><br />
+            на Windows 10+<br />
+            с использованием <a href="https://github.com/GitHub">GitHub</a>
+        </CardBody>
+    </Card>
 
+    <Card IsCenter="true">
+        <CardBody>
+            <h5>Среда выполнения</h5>
+            <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank" >ASP.NET Core Runtime 6.0</a><br />
+            на Windows<br />
+            Поддерживется также<br /> на Linux, macOS
+        </CardBody>
+    </Card>
 
+    <Card IsCenter="true">
+        <CardBody>
+            <h5>База данных</h5>
+            Используется Sqlite<br /><br />
+            Также поддерживаются:<br />
+            SqlServer, MySql, PostgreSQL
+        </CardBody>
+    </Card>
+</Row>
+<br />
+<Row ItemsPerRow="ItemsPerRow.Two">
+    <Card IsCenter="true">
+        <CardBody>
+            <h5>UI-фреймворк</h5>
+            <a href="https://metanit.com/sharp/blazor/1.1.php" target="_blank">Blazor Server</a><br />
+            Таже поддерживается работа в режиме <a href="https://docs.microsoft.com/ru-ru/aspnet/core/blazor/?view=aspnetcore-6.0" target="_blank">Blazor WebAssembly</a> 
+            - одностраничного интерактивного приложения клиентской стороны
+        </CardBody>
+    </Card>
+
+    <Card IsCenter="true">
+        <CardBody>
+            <h5>UI компоненты</h5>
+            <a href="https://blazor.zone/" target="_blank">BootstrapBlazor</a><br />
+            Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor
+        </CardBody>
+    </Card>
+</Row>

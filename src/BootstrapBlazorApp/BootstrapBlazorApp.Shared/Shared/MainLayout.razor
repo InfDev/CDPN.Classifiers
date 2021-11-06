@@ -12,12 +12,13 @@
             <img src="_content/BootstrapBlazorApp.Shared/images/Argo.png" class="layout-avatar-right" />
             <span class="mx-3 d-sm-block">Супер-администратор</span>
         </div>
-        <ul class="navbar-nav ms-3 d-none d-lg-flex" style="">
-            <li class="nav-item"><a class="nav-link p-2" href="https://infdev.com.ua#net" target="_blank" title="Шпаргалка разработчика ПО">
-                <img src="_content/BootstrapBlazorApp.Shared/images/info.png"></a></li>
+        <ul class="nav ms-3 layout-header">
+            <li class="nav-item"><a class="nav-link p-2" href="https://infdev.com.ua/dotnet/#net" target="_blank" title="Шпаргалка разработчика ПО">
+                <img src="_content/BootstrapBlazorApp.Shared/images/info.svg"></a></li>
             <li class="nav-item"><a class="nav-link p-2" href="https://github.com/InfDev/CDPN.Classifiers" target="_blank" title="Исходники на github">
                 <img src="_content/BootstrapBlazorApp.Shared/images/git.svg"></a></li>
         </ul>
+        <FullScreenButton Title="Щелкните для полноэкранного режима" style="color:#ffffff" />
         <div class="layout-drawer" @onclick="@(e => IsOpen = !IsOpen)"><i class="fa fa-gears"></i></div>
     </Header>
     <Side>
@@ -41,7 +42,7 @@
         </CascadingValue>
     </Main>
     <Footer>
-        <div class="text-center flex-fill page-layout-demo-footer">© 2021 А.Шляхто</div>
+        <div class="text-center flex-fill page-layout-demo-footer"><span style="color:black">© 2021 Александр Шляхто</span></div>
     </Footer>
     <NotFound>
         <p>Извините, по этому адресу ничего нет.</p>
@@ -155,3 +156,4 @@
 <PopoverConfirm />
 <Message />
 <SweetAlert />
+<FullScreen />
