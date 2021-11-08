@@ -20,48 +20,48 @@ namespace CDPN.Classifiers.Client
             this.httpClient = httpClient;
         }
 
-        public async Task<Response<Currency>> GetCurrenciesAsync(
+        public async Task<PagingResponse<Currency>> GetCurrenciesAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
             var uri = GetUri("Currencies", page, pageSize, orderBy, filter);
-            var response = await httpClient.GetFromJsonAsync<Response<Currency>>(uri);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<Currency>>(uri);
             return response;
         }
 
-        public async Task<Response<Country>> GetCountriesAsync(
+        public async Task<PagingResponse<Country>> GetCountriesAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
             var uri = GetUri("Countries", page, pageSize, orderBy, filter);
-            var response = await httpClient.GetFromJsonAsync<Response<Country>>(uri);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<Country>>(uri);
             return response;
         }
 
-        public async Task<Response<AtdLevel>> GetAtdLevelsAsync(
+        public async Task<PagingResponse<AtdLevel>> GetAtdLevelsAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
             var uri = GetUri("AtdLevels", page, pageSize, orderBy, filter);
-            var response = await httpClient.GetFromJsonAsync<Response<AtdLevel>>(uri);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<AtdLevel>>(uri);
             return response;
         }
 
-        public async Task<Response<AtdCategory>> GetAtdCategoriesAsync(
+        public async Task<PagingResponse<AtdCategory>> GetAtdCategoriesAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
             var uri = GetUri("AtdCategories", page, pageSize, orderBy, filter);
-            var response = await httpClient.GetFromJsonAsync<Response<AtdCategory>>(uri);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<AtdCategory>>(uri);
             return response;
         }
 
 
-        public async Task<Response<AtdUnit>> GetAtdUnitsAsync(
+        public async Task<PagingResponse<AtdUnit>> GetAtdUnitsAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
             var uri = GetUri("AtdUnits", page, pageSize, orderBy, filter);
-            var response = await httpClient.GetFromJsonAsync<Response<AtdUnit>>(uri);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<AtdUnit>>(uri);
             return response;
         }
 
-        public async Task<Response<AtdUnit>> GetAtdUnitsOfUkraineMainRegionsAsync(bool withCountry = true, bool withOccupied = true)
+        public async Task<PagingResponse<AtdUnit>> GetAtdUnitsOfUkraineMainRegionsAsync(bool withCountry = true, bool withOccupied = true)
         {
             var levelIdCondition = withCountry ? "<2" : "=1";
             var filter = $"Id^UA,AtdLevelId{levelIdCondition}";

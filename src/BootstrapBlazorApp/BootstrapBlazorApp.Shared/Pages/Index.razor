@@ -2,12 +2,12 @@
 @using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
 
-<h2>Демо веб-приложения</h2>
+<h4>Демо веб-приложения</h4>
 
-Это приложение демонстрирует варианты Blazor-приложения и 
-<a href="@openApiDocumentUrl" target="_blank">веб-сервиса "Классификаторы"</a>,
+Это приложение демонстрирует варианты Blazor-приложения и автономного
+<a href="@openApiDocumentUrl" target="_blank"> веб-сервиса "Классификаторы"</a>,
 которые разработаны на открытых технологиях .NET конца 2021 года.
-Веб-сервис соответствует <a href="http://infdev.com.ua/standards/openapi/" target="_blank">спецификации OpenAPI</a>. 
+Веб-сервис соответствует <a href="https://infdev.com.ua/standards/openapi/" target="_blank">спецификации OpenAPI</a>. 
 
 <br /><br />
 
@@ -54,7 +54,7 @@
     <Card IsCenter="true">
         <CardBody>
             <h5>UI компоненты</h5>
-            <a href="https://blazor.zone/" target="_blank">BootstrapBlazor</a><br />
+            <a href="https://www.blazor.zone/" target="_blank">BootstrapBlazor</a><br />
             Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor
         </CardBody>
     </Card>
@@ -63,9 +63,7 @@
 @code {
     private string openApiDocumentUrl;
 
-    protected override async Task OnInitializedAsync()
-    {
+    protected override async Task OnInitializedAsync() => 
         openApiDocumentUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:OpenApiDocumentUrl");
-    }
 
 }

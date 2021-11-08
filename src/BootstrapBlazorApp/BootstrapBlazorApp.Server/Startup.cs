@@ -50,8 +50,8 @@ namespace BootstrapBlazorApp.Server
                 localizerOption.SupportedUICultures = supportedCultures;
             });
 
-            //var apiGatewayClassifiersUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:Url");
-            //services.AddHttpClient<ClassifiersClient>(client => client.BaseAddress = new Uri(apiGatewayClassifiersUrl));
+            var apiGatewayClassifiersUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:Url");
+            services.AddHttpClient<ClassifiersClient>(client => client.BaseAddress = new Uri(apiGatewayClassifiersUrl));
 
             services.AddSingleton<WeatherForecastService>();
 

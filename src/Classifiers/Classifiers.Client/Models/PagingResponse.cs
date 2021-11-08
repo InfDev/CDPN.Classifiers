@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CDPN.Classifiers.Client.Models
 {
-    public class Response<T> where T : class
+    public class PagingResponse<T> where T : class
     {
         public int PageNumber { get; set; }
         public int PageSize { get; set; }

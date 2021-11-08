@@ -270,7 +270,7 @@
     "BoolFilter.FalseText": "Нет",
     "GreaterThanOrEqual": "Больше или равно",
     "LessThanOrEqual": "Меньше или равно",
-    "GreaterThan": "Бльше чем",
+    "GreaterThan": "Больше чем",
     "LessThan": "Меньше чем",
     "Equal": "Равно",
     "NotEqual": "Не равно",

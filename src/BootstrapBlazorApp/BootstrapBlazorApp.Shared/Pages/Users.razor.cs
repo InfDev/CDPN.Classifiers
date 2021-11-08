@@ -1,4 +1,5 @@
 ﻿using BootstrapBlazor.Components;
+using CDPN.Classifiers.Client;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Localization;
 using System;
@@ -18,7 +19,7 @@ namespace BootstrapBlazorApp.Shared.Pages
         private IStringLocalizer<Foo> Localizer { get; set; }
 
         /// <summary>
-        /// 获得/设置 分页配置数据源
+        /// Установить допустимые размеры страниц
         /// </summary>
         private IEnumerable<int> PageItemsSource => new int[] { 5 };
 
