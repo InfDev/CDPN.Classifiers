@@ -33,38 +33,15 @@ namespace BootstrapBlazorApp.Shared.Pages
         {
             var request = options.PagingRequest();
             var response = await ClassifiersClient.GetCurrenciesAsync(
-                request.Page, request.PageSize, request.OrderBy, request.Filter);
-
-            var isSearch = false;
-            var isFiltered = false;
-            var isSorted = false;
+                    request.Page, request.PageSize, request.OrderBy, request.Filter);
             return new QueryData<Currency>
             {
                 Items = response.Data,
                 TotalCount = response.TotalRecords,
-                IsFiltered = isFiltered,
-                IsSorted = isSorted,
-                IsSearch = isSearch,
+                IsFiltered = !string.IsNullOrEmpty(request.Filter),
+                IsSorted = !string.IsNullOrEmpty(request.OrderBy),
+                IsSearch = false,
             };
-
-            //var task = Task.Run(() => {
-
-            //    var request = PagingRequestFrom(options);
-
-            //    var response = ClassifiersClient.GetCurrenciesAsync().GetAwaiter().GetResult();
-            //    var isSearch = false;
-            //    var isFiltered = false;
-            //    var isSorted = false;
-
-            //    return Task.FromResult(new QueryData<Currency> { 
-            //            Items = response.Data.AsEnumerable(),
-            //            TotalCount = response.TotalRecords,
-            //            IsFiltered = isFiltered,
-            //            IsSorted = isSorted,
-            //            IsSearch = isSearch,
-            //        });
-            //});
-            //return task;
         }
     }
 }
