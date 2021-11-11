@@ -11,7 +11,7 @@ GO
 BEGIN TRANSACTION;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdAtdCategory] (
         [Id] nvarchar(1) NOT NULL,
@@ -21,19 +21,19 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdAtdLevel] (
         [Id] int NOT NULL,
         [Name] nvarchar(200) NOT NULL,
         [InUnitIdStartIndex] int NOT NULL,
-        [InUnitIdStoptIndex] int NOT NULL,
+        [InUnitIdEndIndex] int NOT NULL,
         CONSTRAINT [PK_StdAtdLevel] PRIMARY KEY ([Id])
     );
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdCountry] (
         [Id] nchar(2) NOT NULL,
@@ -47,7 +47,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdCurrency] (
         [Id] nvarchar(450) NOT NULL,
@@ -60,7 +60,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdPaperSize] (
         [Id] int NOT NULL,
@@ -73,7 +73,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdRegionLevel] (
         [Id] int NOT NULL,
@@ -83,7 +83,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdAtdUnit] (
         [Id] nvarchar(20) NOT NULL,
@@ -94,12 +94,12 @@ BEGIN
         CONSTRAINT [PK_StdAtdUnit] PRIMARY KEY ([Id]),
         CONSTRAINT [FK_StdAtdUnit_StdAtdCategory_AtdCategoryId] FOREIGN KEY ([AtdCategoryId]) REFERENCES [StdAtdCategory] ([Id]) ON DELETE CASCADE,
         CONSTRAINT [FK_StdAtdUnit_StdAtdLevel_AtdLevelId] FOREIGN KEY ([AtdLevelId]) REFERENCES [StdAtdLevel] ([Id]) ON DELETE CASCADE,
-        CONSTRAINT [FK_StdAtdUnit_StdAtdUnit_ParentId] FOREIGN KEY ([ParentId]) REFERENCES [StdAtdUnit] ([Id]) ON DELETE NO ACTION
+        CONSTRAINT [FK_StdAtdUnit_StdAtdUnit_ParentId] FOREIGN KEY ([ParentId]) REFERENCES [StdAtdUnit] ([Id])
     );
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE TABLE [StdRegion] (
         [Id] nvarchar(450) NOT NULL,
@@ -114,52 +114,52 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE INDEX [IX_StdAtdUnit_AtdCategoryId] ON [StdAtdUnit] ([AtdCategoryId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE INDEX [IX_StdAtdUnit_AtdLevelId] ON [StdAtdUnit] ([AtdLevelId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE INDEX [IX_StdAtdUnit_ParentId] ON [StdAtdUnit] ([ParentId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE UNIQUE INDEX [IX_StdCountry_Alpha3] ON [StdCountry] ([Alpha3]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE UNIQUE INDEX [IX_StdCountry_NumericCode] ON [StdCountry] ([NumericCode]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE UNIQUE INDEX [IX_StdCurrency_NumericCode] ON [StdCurrency] ([NumericCode]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     CREATE INDEX [IX_StdRegion_RegionLevelId] ON [StdRegion] ([RegionLevelId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211102191113_InitialCreate')
+IF NOT EXISTS(SELECT * FROM [__Std_EFMigrationsHistory] WHERE [MigrationId] = N'20211111104635_InitialCreate')
 BEGIN
     INSERT INTO [__Std_EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20211102191113_InitialCreate', N'5.0.11');
+    VALUES (N'20211111104635_InitialCreate', N'6.0.0');
 END;
 GO
 

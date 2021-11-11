@@ -28,7 +28,7 @@ namespace CDPN.Classifiers.Entities
         /// <summary>
         /// Конечный индекс в идентификаторе единицы АТО
         /// </summary>
-        public int InUnitIdStoptIndex { get; set; }
+        public int InUnitIdEndIndex { get; set; }
 
         public ICollection<AtdUnit> AtdUnits { get; set; }
 

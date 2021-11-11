@@ -278,6 +278,10 @@
     "NotContains": "Не включает",
     "EnumFilter.AllText": "Все"
   },
+  "BootstrapBlazor.Components.FilterLogicItem": {
+    "And": "И",
+    "Or": "ИЛИ"
+  },
   "BootstrapBlazor.Components.SearchDialog": {
     "ResetButtonText": "Сброс",
     "QueryButtonText": "Запрос"

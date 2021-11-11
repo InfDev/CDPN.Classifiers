@@ -6,6 +6,6 @@ namespace CDPN.Classifiers.Client.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int InUnitIdStartIndex { get; set; }
-        public int InUnitIdStoptIndex { get; set; }
+        public int InUnitIdEndIndex { get; set; }
     }
 }

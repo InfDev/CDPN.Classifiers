@@ -14,7 +14,7 @@ CREATE TABLE "StdAtdLevel" (
     "Id" INTEGER NOT NULL CONSTRAINT "PK_StdAtdLevel" PRIMARY KEY,
     "Name" TEXT NOT NULL,
     "InUnitIdStartIndex" INTEGER NOT NULL,
-    "InUnitIdStoptIndex" INTEGER NOT NULL
+    "InUnitIdEndIndex" INTEGER NOT NULL
 );
 
 CREATE TABLE "StdCountry" (
@@ -83,7 +83,7 @@ CREATE UNIQUE INDEX "IX_StdCurrency_NumericCode" ON "StdCurrency" ("NumericCode"
 CREATE INDEX "IX_StdRegion_RegionLevelId" ON "StdRegion" ("RegionLevelId");
 
 INSERT INTO "__Std_EFMigrationsHistory" ("MigrationId", "ProductVersion")
-VALUES ('20211102191129_InitialCreate', '6.0.0-rc.2.21480.5');
+VALUES ('20211111104647_InitialCreate', '6.0.0');
 
 COMMIT;
 

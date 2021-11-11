@@ -12,15 +12,15 @@ using BootstrapBlazorApp.Shared.Extensions;
 
 namespace BootstrapBlazorApp.Shared.Pages
 {
-    public partial class Countries
+    public partial class AtdLevels
     {
-        public Countries()
+        public AtdLevels()
         {
 
         }
 
         [Inject]
-        private IStringLocalizer<Countries> Localizer { get; set; }
+        private IStringLocalizer<AtdLevels> Localizer { get; set; }
 
         [Inject]
         private ClassifiersClient ClassifiersClient { get; set; }
@@ -30,12 +30,12 @@ namespace BootstrapBlazorApp.Shared.Pages
         /// </summary>
         private IEnumerable<int> PageItemsSource => new int[] { 20, 10, 50 };
 
-        private async Task<QueryData<Country>> OnQueryAsync(QueryPageOptions options)
+        private async Task<QueryData<AtdLevel>> OnQueryAsync(QueryPageOptions options)
         {
             var request = options.PagingRequest();
-            var response = await ClassifiersClient.GetCountriesAsync(
+            var response = await ClassifiersClient.GetAtdLevelsAsync(
                     request.Page, request.PageSize, request.OrderBy, request.Filter);
-            return new QueryData<Country>
+            return new QueryData<AtdLevel>
             {
                 Items = response.Data,
                 TotalCount = response.TotalRecords,

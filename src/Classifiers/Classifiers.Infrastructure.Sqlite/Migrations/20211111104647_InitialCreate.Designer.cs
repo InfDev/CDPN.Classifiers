@@ -6,78 +6,78 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
+#nullable disable
+
+namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
-    [Migration("20211102191142_InitialCreate")]
+    [Migration("20211111104647_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.11");
+            modelBuilder.HasAnnotation("ProductVersion", "6.0.0");
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdCategory", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdAtdCategory");
+                    b.ToTable("StdAtdCategory", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("InUnitIdEndIndex")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("InUnitIdStartIndex")
-                        .HasColumnType("int");
-
-                    b.Property<int>("InUnitIdStoptIndex")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdAtdLevel");
+                    b.ToTable("StdAtdLevel", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdUnit", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("AtdCategoryId")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("varchar(1)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("AtdLevelId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(20)
-                        .HasColumnType("varchar(20)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
@@ -87,38 +87,38 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("StdAtdUnit");
+                    b.ToTable("StdAtdUnit", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(2)
-                        .HasColumnType("char(2)")
-                        .IsFixedLength(true);
+                        .HasColumnType("TEXT")
+                        .IsFixedLength();
 
                     b.Property<string>("Alpha3")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("char(3)")
-                        .IsFixedLength(true);
+                        .HasColumnType("TEXT")
+                        .IsFixedLength();
 
                     b.Property<string>("CurrencyId")
                         .HasMaxLength(3)
-                        .HasColumnType("varchar(3)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("INTEGER")
                         .HasDefaultValue(0);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("NumericCode")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -128,108 +128,108 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.HasIndex("NumericCode")
                         .IsUnique();
 
-                    b.ToTable("StdCountry");
+                    b.ToTable("StdCountry", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Currency", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("INTEGER")
                         .HasDefaultValue(0);
 
                     b.Property<int?>("MinorUnit")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("NumericCode")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NumericCode")
                         .IsUnique();
 
-                    b.ToTable("StdCurrency");
+                    b.ToTable("StdCurrency", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.PaperSize", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Format")
                         .IsRequired()
                         .HasMaxLength(8)
-                        .HasColumnType("varchar(8)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Height")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Use")
                         .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Width")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdPaperSize");
+                    b.ToTable("StdPaperSize", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Region", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Center")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("CountryClassifierId")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("CountryId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("RegionLevelId")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
                     b.HasIndex("RegionLevelId");
 
-                    b.ToTable("StdRegion");
+                    b.ToTable("StdRegion", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.RegionLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("int");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdRegionLevel");
+                    b.ToTable("StdRegionLevel", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdUnit", b =>

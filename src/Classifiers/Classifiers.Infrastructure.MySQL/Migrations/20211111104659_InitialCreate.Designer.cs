@@ -8,27 +8,29 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
+namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
-    [Migration("20211102191129_InitialCreate")]
+    [Migration("20211111104659_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "6.0.0-rc.2.21480.5");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdCategory", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(1)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(200)");
 
                     b.HasKey("Id");
 
@@ -38,18 +40,18 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    b.Property<int>("InUnitIdEndIndex")
+                        .HasColumnType("int");
 
                     b.Property<int>("InUnitIdStartIndex")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("InUnitIdStoptIndex")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(200)");
 
                     b.HasKey("Id");
 
@@ -60,24 +62,24 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(20)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(20)");
 
                     b.Property<string>("AtdCategoryId")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<int>("AtdLevelId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(20)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("Id");
 
@@ -94,31 +96,31 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(2)
-                        .HasColumnType("TEXT")
+                        .HasColumnType("char(2)")
                         .IsFixedLength();
 
                     b.Property<string>("Alpha3")
                         .IsRequired()
                         .HasMaxLength(3)
-                        .HasColumnType("TEXT")
+                        .HasColumnType("char(3)")
                         .IsFixedLength();
 
                     b.Property<string>("CurrencyId")
                         .HasMaxLength(3)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(3)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
+                        .HasColumnType("int")
                         .HasDefaultValue(0);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("NumericCode")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -134,23 +136,23 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Currency", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Group")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
+                        .HasColumnType("int")
                         .HasDefaultValue(0);
 
                     b.Property<int?>("MinorUnit")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("NumericCode")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -163,22 +165,22 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.PaperSize", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Format")
                         .IsRequired()
                         .HasMaxLength(8)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(8)");
 
                     b.Property<int>("Height")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Use")
                         .HasMaxLength(200)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(200)");
 
                     b.Property<int>("Width")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -188,27 +190,27 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.Region", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Center")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("CountryClassifierId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("longtext");
 
                     b.Property<int>("CountryId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("RegionLevelId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -220,12 +222,12 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
             modelBuilder.Entity("CDPN.Classifiers.Entities.RegionLevel", b =>
                 {
                     b.Property<int>("Id")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
 

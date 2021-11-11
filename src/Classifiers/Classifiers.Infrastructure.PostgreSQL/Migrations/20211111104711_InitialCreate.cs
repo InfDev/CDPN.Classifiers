@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace Classifiers.Infrastructure.PostgreSQL.Migrations
 {
     public partial class InitialCreate : Migration
@@ -25,7 +27,7 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
                     InUnitIdStartIndex = table.Column<int>(type: "integer", nullable: false),
-                    InUnitIdStoptIndex = table.Column<int>(type: "integer", nullable: false)
+                    InUnitIdEndIndex = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -119,8 +121,7 @@ namespace Classifiers.Infrastructure.PostgreSQL.Migrations
                         name: "FK_StdAtdUnit_StdAtdUnit_ParentId",
                         column: x => x.ParentId,
                         principalTable: "StdAtdUnit",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

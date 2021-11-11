@@ -2,105 +2,130 @@
 
 #nullable disable
 
-namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
+namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 {
     public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "StdAtdCategory",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", maxLength: 1, nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false)
+                    Id = table.Column<string>(type: "varchar(1)", maxLength: 1, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdAtdCategory", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdAtdLevel",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 200, nullable: false),
-                    InUnitIdStartIndex = table.Column<int>(type: "INTEGER", nullable: false),
-                    InUnitIdStoptIndex = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    InUnitIdStartIndex = table.Column<int>(type: "int", nullable: false),
+                    InUnitIdEndIndex = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdAtdLevel", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdCountry",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", fixedLength: true, maxLength: 2, nullable: false),
-                    Alpha3 = table.Column<string>(type: "TEXT", fixedLength: true, maxLength: 3, nullable: false),
-                    NumericCode = table.Column<int>(type: "INTEGER", nullable: false),
-                    Group = table.Column<int>(type: "INTEGER", nullable: false, defaultValue: 0),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    CurrencyId = table.Column<string>(type: "TEXT", maxLength: 3, nullable: true)
+                    Id = table.Column<string>(type: "char(2)", fixedLength: true, maxLength: 2, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Alpha3 = table.Column<string>(type: "char(3)", fixedLength: true, maxLength: 3, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    NumericCode = table.Column<int>(type: "int", nullable: false),
+                    Group = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CurrencyId = table.Column<string>(type: "varchar(3)", maxLength: 3, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdCountry", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdCurrency",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    NumericCode = table.Column<int>(type: "INTEGER", nullable: false),
-                    MinorUnit = table.Column<int>(type: "INTEGER", nullable: true),
-                    Group = table.Column<int>(type: "INTEGER", nullable: false, defaultValue: 0),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    NumericCode = table.Column<int>(type: "int", nullable: false),
+                    MinorUnit = table.Column<int>(type: "int", nullable: true),
+                    Group = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdCurrency", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdPaperSize",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false),
-                    Format = table.Column<string>(type: "TEXT", maxLength: 8, nullable: false),
-                    Width = table.Column<int>(type: "INTEGER", nullable: false),
-                    Height = table.Column<int>(type: "INTEGER", nullable: false),
-                    Use = table.Column<string>(type: "TEXT", maxLength: 200, nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Format = table.Column<string>(type: "varchar(8)", maxLength: 8, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Width = table.Column<int>(type: "int", nullable: false),
+                    Height = table.Column<int>(type: "int", nullable: false),
+                    Use = table.Column<string>(type: "varchar(200)", maxLength: 200, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdPaperSize", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdRegionLevel",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_StdRegionLevel", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdAtdUnit",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", maxLength: 20, nullable: false),
-                    ParentId = table.Column<string>(type: "TEXT", maxLength: 20, nullable: true),
-                    AtdLevelId = table.Column<int>(type: "INTEGER", nullable: false),
-                    AtdCategoryId = table.Column<string>(type: "TEXT", maxLength: 1, nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false)
+                    Id = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ParentId = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AtdLevelId = table.Column<int>(type: "int", nullable: false),
+                    AtdCategoryId = table.Column<string>(type: "varchar(1)", maxLength: 1, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -122,18 +147,23 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
                         column: x => x.ParentId,
                         principalTable: "StdAtdUnit",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "StdRegion",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
-                    CountryId = table.Column<int>(type: "INTEGER", nullable: false),
-                    RegionLevelId = table.Column<int>(type: "INTEGER", nullable: false),
-                    CountryClassifierId = table.Column<string>(type: "TEXT", nullable: false),
-                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Center = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CountryId = table.Column<int>(type: "int", nullable: false),
+                    RegionLevelId = table.Column<int>(type: "int", nullable: false),
+                    CountryClassifierId = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Center = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -144,7 +174,8 @@ namespace CDPN.Classifiers.Infrastructure.Sqlite.Migrations
                         principalTable: "StdRegionLevel",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
                 name: "IX_StdAtdUnit_AtdCategoryId",

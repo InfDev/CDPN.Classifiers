@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
 using CDPN.Classifiers.Client;
+using Microsoft.AspNetCore.HttpOverrides;
 
 namespace BootstrapBlazorApp.Server
 {
@@ -24,6 +25,11 @@ namespace BootstrapBlazorApp.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            // services.AddCors();
+            services.AddResponseCompression();
+
+            services.AddControllers();
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
@@ -42,6 +48,10 @@ namespace BootstrapBlazorApp.Server
             //@"D:\Argo\src\BootstrapBlazor\src\BootstrapBlazor.Server\Locales\zh-CN.json"
             //    };
             });
+            //services.AddBootstrapBlazorServices(Configuration.GetSection("Themes")
+            //    .GetChildren()
+            //    .Select(c => new KeyValuePair<string, string>(c.Key, c.Value)));
+
             services.AddRequestLocalization<IOptions<BootstrapBlazorOptions>>((localizerOption, blazorOption) =>
             {
                 var supportedCultures = blazorOption.Value.GetSupportedCultures();
@@ -62,6 +72,10 @@ namespace BootstrapBlazorApp.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.ApplicationServices.RegisterProvider();
+            app.UseRequestLocalization(app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>()!.Value);
+            app.UseForwardedHeaders(new ForwardedHeadersOptions() { ForwardedHeaders = ForwardedHeaders.All });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -71,13 +85,19 @@ namespace BootstrapBlazorApp.Server
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseResponseCompression();
             app.UseStaticFiles();
-
-            app.UseRequestLocalization(app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>()!.Value);
             app.UseRouting();
+            //app.UseCors(builder => builder.WithOrigins(Configuration["AllowOrigins"].Split(',', StringSplitOptions.RemoveEmptyEntries))
+            //    .AllowAnyHeader()
+            //    .AllowAnyMethod()
+            //    .AllowCredentials());
+
+            //app.UseBootstrapBlazor();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapDefaultControllerRoute();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });

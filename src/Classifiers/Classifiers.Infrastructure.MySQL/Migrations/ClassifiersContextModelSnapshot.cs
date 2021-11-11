@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
+#nullable disable
+
 namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 {
     [DbContext(typeof(ClassifiersContext))]
@@ -14,8 +16,8 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.11");
+                .HasAnnotation("ProductVersion", "6.0.0")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdCategory", b =>
                 {
@@ -30,7 +32,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdAtdCategory");
+                    b.ToTable("StdAtdCategory", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdLevel", b =>
@@ -38,10 +40,10 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("InUnitIdStartIndex")
+                    b.Property<int>("InUnitIdEndIndex")
                         .HasColumnType("int");
 
-                    b.Property<int>("InUnitIdStoptIndex")
+                    b.Property<int>("InUnitIdStartIndex")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -51,7 +53,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdAtdLevel");
+                    b.ToTable("StdAtdLevel", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdUnit", b =>
@@ -85,7 +87,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("StdAtdUnit");
+                    b.ToTable("StdAtdUnit", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Country", b =>
@@ -93,13 +95,13 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.Property<string>("Id")
                         .HasMaxLength(2)
                         .HasColumnType("char(2)")
-                        .IsFixedLength(true);
+                        .IsFixedLength();
 
                     b.Property<string>("Alpha3")
                         .IsRequired()
                         .HasMaxLength(3)
                         .HasColumnType("char(3)")
-                        .IsFixedLength(true);
+                        .IsFixedLength();
 
                     b.Property<string>("CurrencyId")
                         .HasMaxLength(3)
@@ -126,7 +128,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.HasIndex("NumericCode")
                         .IsUnique();
 
-                    b.ToTable("StdCountry");
+                    b.ToTable("StdCountry", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Currency", b =>
@@ -155,7 +157,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
                     b.HasIndex("NumericCode")
                         .IsUnique();
 
-                    b.ToTable("StdCurrency");
+                    b.ToTable("StdCurrency", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.PaperSize", b =>
@@ -180,7 +182,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdPaperSize");
+                    b.ToTable("StdPaperSize", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.Region", b =>
@@ -212,7 +214,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasIndex("RegionLevelId");
 
-                    b.ToTable("StdRegion");
+                    b.ToTable("StdRegion", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.RegionLevel", b =>
@@ -227,7 +229,7 @@ namespace CDPN.Classifiers.Infrastructure.MySql.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StdRegionLevel");
+                    b.ToTable("StdRegionLevel", (string)null);
                 });
 
             modelBuilder.Entity("CDPN.Classifiers.Entities.AtdUnit", b =>

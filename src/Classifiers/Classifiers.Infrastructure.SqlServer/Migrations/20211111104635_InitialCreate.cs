@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
 {
     public partial class InitialCreate : Migration
@@ -25,7 +27,7 @@ namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
                     Id = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
                     InUnitIdStartIndex = table.Column<int>(type: "int", nullable: false),
-                    InUnitIdStoptIndex = table.Column<int>(type: "int", nullable: false)
+                    InUnitIdEndIndex = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -119,8 +121,7 @@ namespace CDPN.Classifiers.Infrastructure.SqlServer.Migrations
                         name: "FK_StdAtdUnit_StdAtdUnit_ParentId",
                         column: x => x.ParentId,
                         principalTable: "StdAtdUnit",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

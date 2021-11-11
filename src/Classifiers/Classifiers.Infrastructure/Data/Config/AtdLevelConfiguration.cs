@@ -22,7 +22,7 @@ namespace CDPN.Classifiers.Infrastructure.Data.Config
             builder.Property(e => e.InUnitIdStartIndex)
                 .IsRequired();
 
-            builder.Property(e => e.InUnitIdStoptIndex)
+            builder.Property(e => e.InUnitIdEndIndex)
                 .IsRequired();
         }
     }
