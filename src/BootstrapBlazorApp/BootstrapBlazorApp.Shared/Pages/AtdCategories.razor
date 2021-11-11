@@ -1,0 +1,17 @@
+﻿@page "/AtdCategories"
+
+@using CDPN.Classifiers.Client.Models;
+
+<h4>Категории АТУ</h4>
+
+<Atd />
+
+<div class="table scroll mt-2">
+    <Table TItem="AtdCategory" IsPagination="false" PageItemsSource="@PageItemsSource" RenderMode="TableRenderMode.Table"
+           IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
+        <TableColumns>
+            <TableColumn @bind-Field="@context.Id" Text="Id" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Name" Text="Наименование" Sortable=true Filterable=true ></TableColumn>
+        </TableColumns>
+    </Table>
+</div>
