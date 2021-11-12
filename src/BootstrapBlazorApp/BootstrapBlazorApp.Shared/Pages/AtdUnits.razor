@@ -1,0 +1,20 @@
+﻿@page "/AtdUnits"
+
+@using CDPN.Classifiers.Client.Models;
+
+<h4>Единицы АТУ</h4>
+
+<Atd />
+
+<div class="table scroll mt-2">
+    <Table TItem="AtdUnit" IsPagination="true" PageItemsSource="@PageItemsSource" RenderMode="TableRenderMode.Table"
+           IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
+        <TableColumns>
+            <TableColumn @bind-Field="@context.Id" Text="Id" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.ParentId" Text="Id родителя" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.AtdLevelId" Text="Уровень" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.AtdCategoryId" Text="Категория" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Name" Text="Наименование" Sortable=true Filterable=true ></TableColumn>
+        </TableColumns>
+    </Table>
+</div>
