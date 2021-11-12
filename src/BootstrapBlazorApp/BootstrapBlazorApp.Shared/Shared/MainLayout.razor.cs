@@ -49,12 +49,12 @@ namespace BootstrapBlazorApp.Shared.Shared
         private static List<MenuItem> GetIconSideMenuItems()
         {
             var classifiersSubmenu = new List<MenuItem>() { 
-                new MenuItem() { Text = "Валюты", Icon = "", Url = "/Currencies" },
-                new MenuItem() { Text = "Страны", Icon = "", Url = "/Countries" },
-                new MenuItem() { Text = "АТУ. Уровни", Icon = "", Url = "/AtdLevels" },
-                new MenuItem() { Text = "АТУ. Категории", Icon = "", Url = "/AtdCategories" },
-                new MenuItem() { Text = "АТУ. Единицы", Icon = "", Url = "/AtdUnits" },
-                new MenuItem() { Text = "Размеры бумаги", Icon = "", Url = "/PaperSizes" },
+                new MenuItem() { Text = "Валюты", Icon = "fa fa-fw fa-money", Url = "/Currencies" },
+                new MenuItem() { Text = "Страны", Icon = "fa fa-fw fa-flag", Url = "/Countries" },
+                new MenuItem() { Text = "АТУ. Уровни", Icon = "fa fa-fw fa-map-marker", Url = "/AtdLevels" },
+                new MenuItem() { Text = "АТУ. Категории", Icon = "fa fa-fw fa-map-marker", Url = "/AtdCategories" },
+                new MenuItem() { Text = "АТУ. Единицы", Icon = "fa fa-fw fa-map-marker", Url = "/AtdUnits" },
+                new MenuItem() { Text = "Размеры бумаги", Icon = "fa fa-fw fa-envelope", Url = "/PaperSizes" },
             };
 
             
@@ -62,7 +62,7 @@ namespace BootstrapBlazorApp.Shared.Shared
             {
                 // new MenuItem() { Text = "Компоненты", Icon = "fa fa-fw fa-home", Url = "https://www.blazor.zone/components" },
                 new MenuItem() { Text = "Начало", Icon = "fa fa-fw fa-home", Url = "/" , Match = NavLinkMatch.All},
-                new MenuItem() { Text = "Классификаторы", Icon = "", Items = classifiersSubmenu, IsCollapsed = false }
+                new MenuItem() { Text = "Классификаторы", Icon = "fa fa-fw fa-book", Items = classifiersSubmenu, IsCollapsed = false }
                 //new MenuItem() { Text = "Счетчик", Icon = "fa fa-fw fa-check-square-o", Url = "/counter" },
                 //new MenuItem() { Text = "FetchData", Icon = "fa fa-fw fa-database", Url = "fetchdata" },
                 //new MenuItem() { Text = "Table", Icon = "fa fa-fw fa-table", Url = "table" },

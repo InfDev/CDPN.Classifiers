@@ -1,0 +1,18 @@
+﻿@page "/PaperSizes"
+
+@using CDPN.Classifiers.Client.Models;
+
+<h4>Размеры бумаги и конвертов согласно ISO 216 и ISO 269</h4>
+
+<div class="table scroll mt-2">
+    <Table TItem="PaperSize" IsPagination="true" PageItemsSource="@PageItemsSource" RenderMode="TableRenderMode.Table"
+           IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
+        <TableColumns>
+            <TableColumn @bind-Field="@context.Id" Text="Id" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Format" Text="Формат" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Width" Text="Ширина" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Height" Text="Высота" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Use" Text="Использование" ></TableColumn>
+        </TableColumns>
+    </Table>
+</div>

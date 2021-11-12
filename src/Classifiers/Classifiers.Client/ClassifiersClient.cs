@@ -52,7 +52,6 @@ namespace CDPN.Classifiers.Client
             return response;
         }
 
-
         public async Task<PagingResponse<AtdUnit>> GetAtdUnitsAsync(
             int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
         {
@@ -69,6 +68,14 @@ namespace CDPN.Classifiers.Client
             if (!withOccupied)
                 filter += ",Name!*окуп";
             return await GetAtdUnitsAsync(1, 50, null, filter);
+        }
+
+        public async Task<PagingResponse<PaperSize>> GetPaperSizesAsync(
+            int page = DefaultPage, int pageSize = DefaultPageSize, string orderBy = null, string filter = null)
+        {
+            var uri = GetUri("PaperSizes", page, pageSize, orderBy, filter);
+            var response = await httpClient.GetFromJsonAsync<PagingResponse<PaperSize>>(uri);
+            return response;
         }
 
         public static string GetUri(string uri, int page, int pageSize, string orderBy, string filter)
