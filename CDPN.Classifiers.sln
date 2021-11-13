@@ -43,9 +43,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Core.Web", "src\Shar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Core.EntityFramework", "src\Shared\Common.Core.EntityFramework\Common.Core.EntityFramework.csproj", "{76B9C6CB-178D-4EB5-BF11-91493667BEA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classifiers.Client", "src\Classifiers\Classifiers.Client\Classifiers.Client.csproj", "{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classifiers.Client", "src\Classifiers\Classifiers.Client\Classifiers.Client.csproj", "{CB2E95DA-8623-4968-9D3E-61D04B6EA2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classifier.Client.UnitTests", "tests\UnitTests\Classifiers\Classifier.Client.UnitTests\Classifier.Client.UnitTests.csproj", "{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Classifier.Client.UnitTests", "tests\UnitTests\Classifiers\Classifier.Client.UnitTests\Classifier.Client.UnitTests.csproj", "{ADFBE0FE-DE55-4955-88DA-9F2522F7A1B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BootstrapBlazorApp", "BootstrapBlazorApp", "{D911BE09-F3A7-425E-A41F-2EDB81F157A1}"
 EndProject
@@ -54,6 +54,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazorApp.Server", "src\BootstrapBlazorApp\BootstrapBlazorApp.Server\BootstrapBlazorApp.Server.csproj", "{CF9D6622-BD17-4669-B392-04096D5A3E0D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BootstrapBlazorApp.WebAssembly", "src\BootstrapBlazorApp\BootstrapBlazorApp.WebAssembly\BootstrapBlazorApp.WebAssembly.csproj", "{49E221C6-082A-4457-B417-1997170E159C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1A54558E-3AED-48DA-AC29-5E0B3E7F061F}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
