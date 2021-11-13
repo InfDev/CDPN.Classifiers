@@ -1,4 +1,21 @@
-﻿(function ($) {
+﻿
+function getBlazorCulture() {
+    return window.localStorage['BlazorCulture'];
+};
+function setBlazorCulture(value) {
+    window.localStorage['BlazorCulture'] = value;
+};
+
+(function ($) {
+    $.blazorCulture = {
+        get: () => {
+            return window.localStorage['BlazorCulture'];
+        },
+        set: (value) => {
+            window.localStorage['BlazorCulture'] = value;
+        }
+    };
+
     $.extend({
         loading: function () {
             var $loader = $("#loading");

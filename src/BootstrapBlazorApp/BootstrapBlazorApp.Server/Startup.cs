@@ -40,16 +40,8 @@ namespace BootstrapBlazorApp.Server
             {
                 // Подключение многоязычных файлов ресурсов в формате RESX, например: Program.{CultureName}.resx
                 localizerOptions.ResourceManagerStringLocalizerType = typeof(Program);
-
                 // Подключение встроенных файлов ресурсов в формате Json
                 localizerOptions.AdditionalJsonAssemblies = new[] { typeof(BootstrapBlazorApp.Shared.App).Assembly };
-
-            //    // Установить файл физического пути Json
-            //    options.AdditionalJsonFiles = new string[]
-            //    {
-            //@"D:\Argo\src\BootstrapBlazor\src\BootstrapBlazor.Server\Locales\zh-TW.json",
-            //@"D:\Argo\src\BootstrapBlazor\src\BootstrapBlazor.Server\Locales\zh-CN.json"
-            //    };
             });
             //services.AddBootstrapBlazorServices(Configuration.GetSection("Themes")
             //    .GetChildren()
