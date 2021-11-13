@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Classifiers\Classifiers.Client\Classifiers.Client.csproj" />
     <ProjectReference Include="..\BootstrapBlazorApp.Shared\BootstrapBlazorApp.Shared.csproj" />
   </ItemGroup>
 

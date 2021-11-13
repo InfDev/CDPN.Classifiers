@@ -33,13 +33,16 @@ namespace BootstrapBlazorApp.Server
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
-            services.AddBootstrapBlazor(null, options =>
+            services.AddBootstrapBlazor(blazorOptions =>
             {
-                // Настройте многоязычные файлы ресурсов в формате RESX, например: Program.{CultureName}.resx
-                options.ResourceManagerStringLocalizerType = typeof(Program);
+                //blazorOptions.DefaultCultureInfo = "ru";
+            }, localizerOptions =>
+            {
+                // Подключение многоязычных файлов ресурсов в формате RESX, например: Program.{CultureName}.resx
+                localizerOptions.ResourceManagerStringLocalizerType = typeof(Program);
 
-                // Установить встроенный файл ресурсов в формате Json
-                options.AdditionalJsonAssemblies = new[] { typeof(BootstrapBlazorApp.Shared.App).Assembly };
+                // Подключение встроенных файлов ресурсов в формате Json
+                localizerOptions.AdditionalJsonAssemblies = new[] { typeof(BootstrapBlazorApp.Shared.App).Assembly };
 
             //    // Установить файл физического пути Json
             //    options.AdditionalJsonFiles = new string[]
@@ -52,12 +55,12 @@ namespace BootstrapBlazorApp.Server
             //    .GetChildren()
             //    .Select(c => new KeyValuePair<string, string>(c.Key, c.Value)));
 
-            services.AddRequestLocalization<IOptions<BootstrapBlazorOptions>>((localizerOption, blazorOption) =>
+            services.AddRequestLocalization<IOptions<BootstrapBlazorOptions>>((localizerOptions, blazorOptions) =>
             {
-                var supportedCultures = blazorOption.Value.GetSupportedCultures();
+                var supportedCultures = blazorOptions.Value.GetSupportedCultures();
 
-                localizerOption.SupportedCultures = supportedCultures;
-                localizerOption.SupportedUICultures = supportedCultures;
+                localizerOptions.SupportedCultures = supportedCultures;
+                localizerOptions.SupportedUICultures = supportedCultures;
             });
 
             var apiGatewayClassifiersUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:Url");
