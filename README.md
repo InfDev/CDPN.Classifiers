@@ -20,3 +20,5 @@
 - [Classifiers API](https://classifiers-api.infdev.com.ua/swagger/)
 - [Classifiers UI. Размещение на сервере](https://classifiers-ui.infdev.com.ua/)
 - [Classifiers UI WASM. Размещение на клиенте](https://classifiers-ui-wasm.infdev.com.ua/)
+
+![КДП-К](./assets/images/cdpn-c.png)
