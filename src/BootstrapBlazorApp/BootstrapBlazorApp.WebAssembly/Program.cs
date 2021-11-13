@@ -63,7 +63,7 @@ namespace BootstrapBlazorApp.WebAssembly
             var jsRuntime = host.Services.GetRequiredService<IJSRuntime>();
             CultureInfo culture;
             string cultureName = await jsRuntime.InvokeAsync<string>("getBlazorCulture");
-            var options = host.Services.GetRequiredService<IOptions<BootstrapBlazorOptions>>()?.Value;
+            var options = host.Services.GetRequiredService<IOptions<BootstrapBlazorOptions>>().Value;
             if (!string.IsNullOrEmpty(cultureName))
             {
                 culture = new CultureInfo(cultureName);
