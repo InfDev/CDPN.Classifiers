@@ -31,5 +31,14 @@
     "AtdCategories": "АТУ. Категорії",
     "AtdUnits": "АТУ. Одиниці",
     "PaperSizes": "Розміри паперу"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Index": {
+    "PageTitle": "Демо веб-застосунка",
+    "PageDescription": "Цей застосунок демонструє варіанти Blazor-застосунка та автономного <a href='{0}' target='_blank'> веб-сервісу \"Класифікатори\"</a>, які розроблені на відкритих технологіях .NET кінця 2021 року. Веб-сервіс відповідає <a href='https://infdev.com.ua/standards/openapi/' target='_blank'> специфікації OpenAPI </a>.",
+    "CardDevelopmentPlatformBody": "<h5>Платформа розробки</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a><br /> з < a href='https://visualstudio.microsoft.com/ru/vs/' target='_blank'> Visual Studio 2022</a><br /> на Windows 10+<br /> з використанням <a href= 'https://github.com/'>GitHub</a>",
+    "CardRuntimeBody": "<h5>Середовище виконання</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank' > ASP.NET Core Runtime 6.0 </a><br /> на Windows<br />Підтримується також<br /> на Linux, macOS",
+    "CardDatabaseBody": "<h5>База даних</h5>Використовується Sqlite<br /><br />Також підтримуються:<br />SqlServer, MySql, PostgreSQL",
+    "CardUIFrameworkBody": "<h5>UI-фреймворк</h5><a href='https://metanit.com/sharp/blazor/1.1.php' target='_blank'> Blazor Server </a><br />Також підтримується робота в режимі <a href='https://docs.microsoft.com/ru-ua/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor WebAssembly </a> - односторінкового інтерактивного застосування клієнтської сторони",
+    "CardUIComponentsBody": "<h5>UI компоненти</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набір компонентів інтерфейсу користувача корпоративного класу на основі Bootstrap і Blazor"
   }
 }

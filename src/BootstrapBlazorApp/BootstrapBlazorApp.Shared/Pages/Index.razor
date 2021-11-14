@@ -1,61 +1,43 @@
 ﻿@page "/"
 @using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.Localization
 @inject IConfiguration Configuration
+@inject IStringLocalizer<Index> Localizer
 
-<h4>Демо веб-приложения</h4>
+<h4>@Localizer["PageTitle"]</h4>
 
-Это приложение демонстрирует варианты Blazor-приложения и автономного
-<a href="@openApiDocumentUrl" target="_blank"> веб-сервиса "Классификаторы"</a>,
-которые разработаны на открытых технологиях .NET конца 2021 года.
-Веб-сервис соответствует <a href="https://infdev.com.ua/standards/openapi/" target="_blank">спецификации OpenAPI</a>. 
-
+@((MarkupString)Localizer.GetString("PageDescription", openApiDocumentUrl).Value)
 <br /><br />
-
 <Row ItemsPerRow="ItemsPerRow.Three">
-    <Card IsCenter="true">
+    <Card IsCenter="true" Class="shadow-sm">
         <CardBody>
-            <h5>Платформа разработки</h5>
-            <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank">.NET SDK 6.0</a><br />
-            с <a href="https://visualstudio.microsoft.com/ru/vs/" target="_blank">Visual Studio 2022</a><br />
-            на Windows 10+<br />
-            с использованием <a href="https://github.com/GitHub">GitHub</a>
+            @((MarkupString)Localizer["CardDevelopmentPlatformBody"].Value)
         </CardBody>
     </Card>
 
-    <Card IsCenter="true">
+    <Card IsCenter="true" Class="shadow-sm">
         <CardBody>
-            <h5>Среда выполнения</h5>
-            <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank" >ASP.NET Core Runtime 6.0</a><br />
-            на Windows<br />
-            Поддерживется также<br /> на Linux, macOS
+            @((MarkupString)Localizer["CardRuntimeBody"].Value)
         </CardBody>
     </Card>
 
-    <Card IsCenter="true">
+    <Card IsCenter="true" Class="shadow-sm">
         <CardBody>
-            <h5>База данных</h5>
-            Используется Sqlite<br /><br />
-            Также поддерживаются:<br />
-            SqlServer, MySql, PostgreSQL
+            @((MarkupString)Localizer["CardDatabaseBody"].Value)
         </CardBody>
     </Card>
 </Row>
 <br />
 <Row ItemsPerRow="ItemsPerRow.Two">
-    <Card IsCenter="true">
+    <Card IsCenter="true" Class="shadow-sm">
         <CardBody>
-            <h5>UI-фреймворк</h5>
-            <a href="https://metanit.com/sharp/blazor/1.1.php" target="_blank">Blazor Server</a><br />
-            Таже поддерживается работа в режиме <a href="https://docs.microsoft.com/ru-ru/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0" target="_blank">Blazor WebAssembly</a> 
-            - одностраничного интерактивного приложения клиентской стороны
+            @((MarkupString)Localizer["CardUIFrameworkBody"].Value)
         </CardBody>
     </Card>
 
-    <Card IsCenter="true">
+    <Card IsCenter="true" Class="shadow-sm">
         <CardBody>
-            <h5>UI компоненты</h5>
-            <a href="https://www.blazor.zone/" target="_blank">BootstrapBlazor</a><br />
-            Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor
+            @((MarkupString)Localizer["CardUIComponentsBody"].Value)
         </CardBody>
     </Card>
 </Row>
