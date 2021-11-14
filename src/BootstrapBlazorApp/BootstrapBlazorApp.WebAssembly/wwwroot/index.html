@@ -34,7 +34,7 @@
         </div>
         <div class="intro">
             <img src="_content/BootstrapBlazorApp.Shared/images/classifiers.png" />
-            <span>Загружается. Ждите...</span>
+            <span><i class="fas fa-cloud-download-alt"></i> Wait/Ждите...</span>
         </div>
         <div class="bar">
             <div class="progress"></div>
@@ -43,12 +43,14 @@
 
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.<br />
             Произошла ошибка. Это приложение может больше не отвечать до перезагрузки.
         </environment>
         <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.<br />
             Произошло необработанное исключение. См. Подробности в инструментах разработчика браузера.
         </environment>
-        <a href="" class="reload">Reload</a>
+        <a href="" class="reload">Reload/Перезагрузить</a>
         <a class="dismiss"><i class="fa fa-times"></i></a>
     </div>
 

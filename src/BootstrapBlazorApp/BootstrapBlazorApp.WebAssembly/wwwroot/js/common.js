@@ -1,10 +1,10 @@
 ﻿
-function getBlazorCulture() {
-    return window.localStorage['BlazorCulture'];
-};
-function setBlazorCulture(value) {
-    window.localStorage['BlazorCulture'] = value;
-};
+//function getBlazorCulture() {
+//    return window.localStorage['BlazorCulture'];
+//};
+//function setBlazorCulture(value) {
+//    window.localStorage['BlazorCulture'] = value;
+//};
 
 (function ($) {
     $.blazorCulture = {

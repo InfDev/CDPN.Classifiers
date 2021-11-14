@@ -1,6 +1,5 @@
 ﻿using BootstrapBlazor.Components;
 using BootstrapBlazorApp.Shared;
-using BootstrapBlazorApp.Shared.Data;
 using CDPN.Classifiers.Client;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -62,7 +61,7 @@ namespace BootstrapBlazorApp.WebAssembly
             // Если язык не установлен в localStorage, используйте язык запроса браузера.
             var jsRuntime = host.Services.GetRequiredService<IJSRuntime>();
             CultureInfo culture;
-            string cultureName = await jsRuntime.InvokeAsync<string>("getBlazorCulture");
+            string cultureName = await jsRuntime.InvokeAsync<string>("$.blazorCulture.get");
             var options = host.Services.GetRequiredService<IOptions<BootstrapBlazorOptions>>().Value;
             if (!string.IsNullOrEmpty(cultureName))
             {
@@ -73,7 +72,7 @@ namespace BootstrapBlazorApp.WebAssembly
                 culture = options.GetSupportedCultures()
                     .Where(x => x.TwoLetterISOLanguageName == options.DefaultCultureInfo)
                     .FirstOrDefault();
-                await jsRuntime.InvokeVoidAsync("setBlazorCulture", culture.Name);
+                await jsRuntime.InvokeVoidAsync("$.blazorCulture.set", culture.Name);
             }
             // Обратите внимание, что в режиме wasm здесь необходимо использовать DefaultThreadCurrentCulture,
             // CurrentCulture использовать нельзя.

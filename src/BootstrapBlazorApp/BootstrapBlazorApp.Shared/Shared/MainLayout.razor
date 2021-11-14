@@ -4,34 +4,34 @@
         IsFullSide="@IsFullSide" IsFixedHeader="@IsFixedHeader" IsFixedFooter="@IsFixedFooter" ShowFooter="@ShowFooter"
         Menus="@Menus" UseTabSet="@UseTabSet" TabItemTextDictionary="@TabItemTextDictionary" AdditionalAssemblies="new[] { GetType().Assembly }" class="@Theme">
     <Header>
-        <span class="ms-3 flex-sm-fill d-sm-block">Демо (классификаторы)</span>
+        <span class="ms-3 flex-sm-fill d-sm-block">@Localizer["AppTitle"]</span>
         <div class="flex-fill d-sm-none">
         </div>
         <div  class="d-none">
             <Widget></Widget>
             <img src="_content/BootstrapBlazorApp.Shared/images/Argo.png" class="layout-avatar-right" />
-            <span class="mx-3 d-sm-block">Супер-администратор</span>
+            <span class="mx-3 d-sm-block">@Localizer["SuperAdministrator"]</span>
         </div>
         <ul class="nav ms-3 layout-header">
-            <li class="nav-item"><a class="nav-link p-2" href="https://infdev.com.ua/dotnet/" target="_blank" title="Шпаргалка разработчика ПО">
+            <li class="nav-item"><a class="nav-link p-2" href="https://infdev.com.ua/dotnet/" target="_blank" title=@Localizer["DeveloperCheatSheetButtonTip"]>
                 <img src="_content/BootstrapBlazorApp.Shared/images/info.svg"></a></li>
-            <li class="nav-item"><a class="nav-link p-2" href="https://github.com/InfDev/CDPN.Classifiers" target="_blank" title="Исходники на github">
+            <li class="nav-item"><a class="nav-link p-2" href="https://github.com/InfDev/CDPN.Classifiers" target="_blank" title=@Localizer["SourcesOnGithubButtonTip"]>
                 <img src="_content/BootstrapBlazorApp.Shared/images/git.svg"></a></li>
         </ul>
-        <FullScreenButton Title="Щелкните для полноэкранного режима" style="color:#ffffff" />
+        <FullScreenButton Title=@Localizer["FullScreenButtonTip"] style="color:#ffffff" />
         <div class="layout-drawer" @onclick="@(e => IsOpen = !IsOpen)"><i class="fa fa-gears"></i></div>
     </Header>
     <Side>
         <div class="layout-banner">
             <img class="layout-logo" src="_content/BootstrapBlazorApp.Shared/images/classifiers.png" />
             <div class="layout-title">
-                <span>КДП-К</span>
+                <span>@Localizer["BannerTitle"]</span>
             </div>
         </div>
         <div class="layout-user">
             <img class="layout-avatar" src="_content/BootstrapBlazorApp.Shared/images/admin.png">
             <div class="layout-title">
-                <span>Администратор</span>
+                <span>@Localizer["Administrator"]</span>
             </div>
             <div class="layout-user-state"></div>
         </div>
@@ -42,21 +42,21 @@
         </CascadingValue>
     </Main>
     <Footer>
-        <div class="text-center flex-fill page-layout-demo-footer"><span style="color:black">© 2021 Александр Шляхто</span></div>
+        <div class="text-center flex-fill page-layout-demo-footer"><span style="color:black">© 2021 @Localizer["FooterAuthor"]</span></div>
     </Footer>
     <NotFound>
-        <p>Извините, по этому адресу ничего нет.</p>
+        <p>@Localizer["PageNotFound"]</p>
     </NotFound>
 </Layout>
 
 <Drawer Placement="Placement.Right" @bind-IsOpen="@IsOpen" IsBackdrop="true">
     <div class="layout-drawer-body">
-        <div class="btn btn-info w-100" @onclick="@(e => IsOpen = false)">Скрыть</div>
+        <div class="btn btn-info w-100" @onclick="@(e => IsOpen = false)">@Localizer["LayoutHide"]</div>
         <div class="page-layout-demo-option">
-            <p>Компоновка</p>
+            <p>@Localizer["Компоновка"]</p>
             <div class="row">
                 <div class="col-6">
-                    <div class="layout-item @(IsFullSide ? "active d-flex" : "d-flex")" @onclick="@(e => IsFullSide = true)" data-toggle="tooltip" title="Левая и правая">
+                    <div class="layout-item @(IsFullSide ? "active d-flex" : "d-flex")" @onclick="@(e => IsFullSide = true)" data-toggle="tooltip" title=@Localizer["LayoutFullSizeLeftAndRightTip"]>
                         <div class="layout-left d-flex flex-column">
                             <div class="layout-left-header"></div>
                             <div class="layout-left-body flex-fill"></div>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="layout-item flex-column @(IsFullSide ? "d-flex" : "active d-flex")" @onclick="@(e => IsFullSide = false)" data-toggle="tooltip" title="Верхняя и нижняя">
+                    <div class="layout-item flex-column @(IsFullSide ? "d-flex" : "active d-flex")" @onclick="@(e => IsFullSide = false)" data-toggle="tooltip" title=@Localizer["LayoutFullSizeTopAndBottomTip"]>
                         <div class="layout-top">
                         </div>
                         <div class="layout-body d-flex flex-fill">
@@ -86,13 +86,13 @@
         </div>
 
         <div class="page-layout-demo-option">
-            <p>Фиксация</p>
+            <p>@Localizer["LayoutFixing"]</p>
             <div class="row">
                 <div class="col-6 d-flex align-items-center">
                     <Switch @bind-Value="@IsFixedHeader" OnColor="@Color.Success" OffColor="@Color.Secondary"></Switch>
                 </div>
                 <div class="col-6 text-right">
-                    <span>Фиксированный заголовок</span>
+                    <span>@Localizer["LayoutFixedHeader"]</span>
                 </div>
             </div>
             <div class="row mt-3">
@@ -100,7 +100,7 @@
                     <Switch @bind-Value="@IsFixedFooter" OnColor="@Color.Success" OffColor="@Color.Secondary"></Switch>
                 </div>
                 <div class="col-6 text-right">
-                    <span>Фиксированный нижний колонтитул</span>
+                    <span>@Localizer["LayoutFixedFooter"]</span>
                 </div>
             </div>
             <div class="row mt-3">
@@ -108,13 +108,13 @@
                     <Switch @bind-Value="@ShowFooter" OnColor="@Color.Success" OffColor="@Color.Primary"></Switch>
                 </div>
                 <div class="col-6 text-right">
-                    <span>Показывать нижний колонтитул</span>
+                    <span>@Localizer["LayoutShowFooter"]</span>
                 </div>
             </div>
         </div>
 
         <div class="page-layout-demo-option">
-            <p>Цветовая схема</p>
+            <p>@Localizer["LayoutColorScheme"]</p>
             <div class="row">
                 <div class="col-2">
                     <span class="color color1" @onclick="@(e => Theme = "color1")"></span>
@@ -138,13 +138,13 @@
         </div>
 
         <div class="page-layout-demo-option">
-            <p>Режим страниц</p>
+            <p>@Localizer["LayoutPageMode"]</p>
             <div class="row">
                 <div class="col-6 d-flex align-items-center">
                     <Switch @bind-Value="@UseTabSet" OnColor="@Color.Success" OffColor="@Color.Primary"></Switch>
                 </div>
                 <div class="col-6 text-right">
-                    <span>@(UseTabSet ? "Многостраничный" : "Одностраничный")</span>
+                    <span>@(UseTabSet ? Localizer["LayoutMultiPage"] : Localizer["LayoutSinglePage"])</span>
                 </div>
             </div>
         </div>

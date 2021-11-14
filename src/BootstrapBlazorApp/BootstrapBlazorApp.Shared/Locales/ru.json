@@ -316,28 +316,37 @@
   },
 
 
-  "BootstrapBlazorApp.Shared.Pages.Foo": {
-    "Name": "Имя",
-    "DateTime": "Время",
-    "Address": "Адрес",
-    "Count": "Количество",
-    "Complete": "Завершено",
-    "Education": "Образование",
-    "Hobby": "Хобби",
-    "Name.Required": "Требуется {0}.",
-    "Address.Required": "Требуется {0}.",
-    "Education.Required": "Требуется {0}.",
-    "Hobby.Required": "Требуется {0}.",
-    "Name.PlaceHolder": "требуется",
-    "Hobbys": "Плавание, Альпинизм, Стрельба, Шахматы",
-    "Foo.Name": "Zhangsan {0}",
-    "Foo.Address": "Lane {0} of Jinshajiang Road, Putuo District, Shanghai",
-    "Foo.Address2": "Earth, China, Lane {0} of Jinshajiang Road, Putuo District, Shanghai. Here is an example of super long cell",
-    "Foo.BindValue": "BindValue"
-  },
-  "BootstrapBlazorApp.Shared.Pages.EnumEducation": {
-    "PlaceHolder": "Щелкните для выбора ...",
-    "Primary": "Начальное",
-    "Middel": "Среднее"
+  "BootstrapBlazorApp.Shared.Shared.MainLayout": {
+    "AppTitle": "Демо (классификаторы)",
+    "SuperAdministrator": "Супер-администратор",
+    "DeveloperCheatSheetButtonTip": "Шпаргалка разработчика ПО",
+    "SourcesOnGithubButtonTip": "Исходники на github",
+    "FullScreenButtonTip": "Щелкните для полноэкранного режима",
+    "BannerTitle": "КДП-К",
+    "Administrator": "Администратор",
+    "FooterAuthor": "Александр Шляхто",
+    "PageNotFound": "Извините, по этому адресу ничего нет.",
+
+    "LayoutHide": "Скрыть",
+    "Layout": "Компоновка",
+    "LayoutFullSizeLeftAndRightTip": "Левая и правая",
+    "LayoutFullSizeTopAndBottomTip": "Верхняя и нижняя",
+    "LayoutFixing": "Фиксация",
+    "LayoutFixedHeader": "Фиксированный заголовок",
+    "LayoutFixedFooter": "Фиксированный нижний колонтитул",
+    "LayoutShowFooter": "Показывать нижний колонтитул",
+    "LayoutColorScheme": "Цветовая схема",
+    "LayoutPageMode": "Режим страниц",
+    "LayoutMultiPage": "Многостраничный",
+    "LayoutSinglePage": "Одностраничный",
+
+    "Home": "Начало",
+    "Classifiers": "Классификаторы",
+    "Currencies": "Валюты",
+    "Countries": "Страны",
+    "AtdLevels": "АТУ. Уровни",
+    "AtdCategories": "АТУ. Категории",
+    "AtdUnits": "АТУ. Единицы",
+    "PaperSizes": "Размеры бумаги"
   }
 }

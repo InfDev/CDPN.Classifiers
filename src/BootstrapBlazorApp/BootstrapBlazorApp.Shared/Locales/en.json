@@ -1,26 +1,35 @@
 ﻿{
-  "BootstrapBlazorApp.Shared.Pages.Foo": {
-    "Name": "Name",
-    "DateTime": "DateTime",
-    "Address": "Address",
-    "Count": "Count",
-    "Complete": "Complete",
-    "Education": "Education",
-    "Hobby": "Hobby",
-    "Name.Required": "{0} is required.",
-    "Address.Required": "{0} is required.",
-    "Education.Required": "{0} is required.",
-    "Hobby.Required": "{0} is required.",
-    "Name.PlaceHolder": "required",
-    "Hobbys": "Swimming,Climb,Shoot,Chess",
-    "Foo.Name": "Zhangsan {0}",
-    "Foo.Address": "Lane {0} of Jinshajiang Road, Putuo District, Shanghai",
-    "Foo.Address2": "Earth, China, Lane {0} of Jinshajiang Road, Putuo District, Shanghai. Here is an example of super long cell",
-    "Foo.BindValue": "BindValue"
-  },
-  "BootstrapBlazorApp.Shared.Pages.EnumEducation": {
-    "PlaceHolder": "Click to select ...",
-    "Primary": "Primary",
-    "Middel": "Middel"
+  "BootstrapBlazorApp.Shared.Shared.MainLayout": {
+    "AppTitle": "Demo (classifiers)",
+    "SuperAdministrator": "Super admin",
+    "DeveloperCheatSheetButtonTip": "Software Developer Cheat Sheet",
+    "SourcesOnGithubButtonTip": "Sources on github",
+    "FullScreenButtonTip": "Click for full screen",
+    "BannerTitle": "CDPN-C",
+    "Administrator": "Administrator",
+    "FooterAuthor": "Alexander Shliakhto",
+    "PageNotFound": "Sorry, there is nothing at this address.",
+
+    "LayoutHide": "Hide",
+    "Layout": "Layout",
+    "LayoutFullSizeLeftAndRightTip": "Left and right",
+    "LayoutFullSizeTopAndBottomTip": "Top and bottom",
+    "LayoutFixing": "Fixing",
+    "LayoutFixedHeader": "Fixed header",
+    "LayoutFixedFooter": "Fixed footer",
+    "LayoutShowFooter": "Show footer",
+    "LayoutColorScheme": "Color scheme",
+    "LayoutPageMode": "Page mode",
+    "LayoutMultiPage": "Multi-page",
+    "LayoutSinglePage": "Single page",
+
+    "Home": "Home",
+    "Classifiers": "Classifiers",
+    "Currencies": "Currencies",
+    "Countries": "Countries",
+    "AtdLevels": "Atd. Levels",
+    "AtdCategories": "Atd. Categories",
+    "AtdUnits": "Atd. Units",
+    "PaperSizes": "Paper sizes"
   }
 }

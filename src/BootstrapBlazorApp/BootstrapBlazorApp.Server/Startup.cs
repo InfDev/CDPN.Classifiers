@@ -1,5 +1,4 @@
 ﻿using BootstrapBlazor.Components;
-using BootstrapBlazorApp.Shared.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -57,11 +56,6 @@ namespace BootstrapBlazorApp.Server
 
             var apiGatewayClassifiersUrl = Configuration.GetValue<string>("ApiGatewayClassifiers:Url");
             services.AddHttpClient<ClassifiersClient>(client => client.BaseAddress = new Uri(apiGatewayClassifiersUrl));
-
-            services.AddSingleton<WeatherForecastService>();
-
-            // 增加 Table 数据服务操作类
-            services.AddTableDemoDataService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

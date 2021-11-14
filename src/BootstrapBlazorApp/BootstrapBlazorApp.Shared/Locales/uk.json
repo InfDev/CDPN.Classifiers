@@ -1,0 +1,35 @@
+﻿{
+  "BootstrapBlazorApp.Shared.Shared.MainLayout": {
+    "AppTitle": "Демо (класифікатори)",
+    "SuperAdministrator": "Супер-адміністратор",
+    "DeveloperCheatSheetButtonTip": "Шпаргалка розробника ПЗ",
+    "SourcesOnGithubButtonTip": "Вихідники на github",
+    "FullScreenButtonTip": "Клацніть для повноекранного режиму",
+    "BannerTitle": "КДП-К",
+    "Administrator": "Адміністратор",
+    "FooterAuthor": "Олександр Шляхто",
+    "PageNotFound": "Вибачте, за цією адресою нічого немає.",
+
+    "LayoutHide": "Приховати",
+    "Layout": "Компонування",
+    "LayoutFullSizeLeftAndRightTip": "Ліва та права",
+    "LayoutFullSizeTopAndBottomTip": "Верхня та нижня",
+    "LayoutFixing": "Фіксація",
+    "LayoutFixedHeader": "Фіксований заголовок",
+    "LayoutFixedFooter": "Фіксований нижній колонтитул",
+    "LayoutShowFooter": "Показувати нижній колонтитул",
+    "LayoutColorScheme": "Колірна схем",
+    "LayoutPageMode": "Режим сторінок",
+    "LayoutMultiPage": "Багатосторінковий",
+    "LayoutSinglePage": "Односторінковий",
+
+    "Home": "Початок",
+    "Classifiers": "Класифікатори",
+    "Currencies": "Валюти",
+    "Countries": "Країни",
+    "AtdLevels": "АТУ. Рівні",
+    "AtdCategories": "АТУ. Категорії",
+    "AtdUnits": "АТУ. Одиниці",
+    "PaperSizes": "Розміри паперу"
+  }
+}
