@@ -1,4 +1,7 @@
 ﻿{
+  "BootstrapBlazorApp.Shared.Components.CultureChooser": {
+    "Label": "Language："
+  },
   "BootstrapBlazorApp.Shared.Shared.MainLayout": {
     "AppTitle": "Demo (classifiers)",
     "SuperAdministrator": "Super admin",

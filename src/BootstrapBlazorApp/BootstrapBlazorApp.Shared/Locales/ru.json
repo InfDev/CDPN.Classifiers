@@ -9,7 +9,7 @@
   "BootstrapBlazor.Components.BarcodeReader": {
     "ButtonScanText": "Сканировать",
     "ButtonStopText": "Закрыть",
-    "AutoStopText": "Автозакрыти",
+    "AutoStopText": "Автозакрытие",
     "DeviceLabel": "Камера",
     "InitDevicesString": "Инициализация ...",
     "NotFoundDevicesString": "Не найдено видеоустройство"
@@ -40,9 +40,9 @@
     "PreviousWeek": "Прошлая неделя",
     "WeekText": "Неделя",
     "NextWeek": "Следующая неделя",
-    "WeekHeaderText": "",
+    "WeekHeaderText": "Неделя",
     "WeekLists": "Вс,Пн,Вт,Ср,Чт,Пт,Сб",
-    "WeekNumberText": "{0} неделей",
+    "WeekNumberText": "{0} недель",
     "Months": "Январь,Февраль,Март,Апрель,Май,Июнь,Июль,Август,Сентябрь,Октябрь,Ноябрь,Декабрь",
     "Title": "{0} {1}"
   },
@@ -77,13 +77,13 @@
     "Months": "Январь,Февраль,Март,Апрель,Май,Июнь,Июль,Август,Сентябрь,Октябрь,Ноябрь,Декабрь",
     "MonthLists": "Янв,Фев,Мар,Апр,Май,Июн,Июл, Авг,Сен,Окт,Ноя,Дек",
     "WeekLists": "Вс,Пн,Вт,Ср,Чт,Пт,Сб",
-    "GenericTypeErroMessage": "DateTimePicker поддерживает только DateTime or Nullable<DateTime>",
+    "GenericTypeErroMessage": "DateTimePicker поддерживает только DateTime или Nullable<DateTime>",
     "Today": "Сегодня",
     "Yesterday": "Вчера",
-    "Weekago": "Неделю наза"
+    "Weekago": "Неделю назад"
   },
   "BootstrapBlazor.Components.DateTimeRange": {
-    "SeparateText": "По",
+    "SeparateText": "по",
     "StartPlaceHolderText": "Начальная дата",
     "EndPlaceHolderText": "Конечная дата",
     "ClearButtonText": "Очистить",
@@ -113,7 +113,7 @@
     "PlaceHolder": "Нажмите для редактирования"
   },
   "BootstrapBlazor.Components.EditorForm": {
-    "ModelInvalidOperationExceptionMessage": "ValidateForm MODEL not match {0} MODEL",
+    "ModelInvalidOperationExceptionMessage": "Модель ValidateForm не совпадает с моделью {0}",
     "PlaceHolderText": "Пожалуйста введите ..."
   },
   "BootstrapBlazor.Components.Empty": {
@@ -142,7 +142,7 @@
     "PrintButtonText": "Печать"
   },
   "BootstrapBlazor.Components.MultiSelect": {
-    "PlaceHolder": "Щелкните для выбор ...",
+    "PlaceHolder": "Щелкните для выбора ...",
     "SelectAllText": "Все",
     "ReverseSelectText": "Реверсирование",
     "ClearText": "Очистить",
@@ -155,7 +155,7 @@
     "AiraFirstPageText": "Первый",
     "AiraNextPageText": "След",
     "PageInfoText": "{0}-{1}",
-    "TotalInfoText": ", Всего {0}",
+    "TotalInfoText": ", всего {0}",
     "PrePageInfoText": "",
     "RowInfoText": "",
     "LabelString": "стр {0}",
@@ -170,7 +170,7 @@
     "InvalidOperationExceptionMessage": "Пожалуйста, разместите элемент <PopoverConfirm /> на текущей странице"
   },
   "BootstrapBlazor.Components.PrintButton": {
-    "Text": "Print"
+    "Text": "Печать"
   },
   "BootstrapBlazor.Components.PrintService": {
     "InvalidOperationExceptionMessage": "Пожалуйста, разместите элемент <Print /> на текущей странице"
@@ -184,7 +184,7 @@
     "SearchButtonText": "Поиск"
   },
   "BootstrapBlazor.Components.Select": {
-    "PlaceHolder": "Щелкните для выбораt ..."
+    "PlaceHolder": "Щелкните для выбора ..."
   },
   "BootstrapBlazor.Components.StringLengthValidator": {
     "ErrorMessage": "Введите значение, меньшее или равное {{0}}"
@@ -228,17 +228,17 @@
     "ResetSearchButtonText": "Сброс",
     "AdvanceButtonText": "Расширенный поиск",
     "CheckboxDisplayText": "Все",
-    "EditModalTitle": "Редактировать данны",
+    "EditModalTitle": "Редактировать данные",
     "AddModalTitle": "Новые данные",
     "ColumnButtonTemplateHeaderText": "",
     "SearchTooltip": "<div class='search-input-tooltip'>Пожалуйста, введите ...</br><kbd>Enter</kbd> Поиск <kbd>ESC</kbd> Очистка</div>",
-    "SearchModalTitle": "Идет поиск",
-    "AddButtonToastTitle": "Добавление данные",
+    "SearchModalTitle": "Выполняется поиск",
+    "AddButtonToastTitle": "Добавление данных",
     "AddButtonToastContent": "Не удалось добавить данные. Пожалуйста, определите метод OnAddAsync",
     "EditButtonToastTitle": "Редактирование данных",
     "EditButtonToastNotSelectContent": "Не удалось сохранить данные. Пожалуйста, определите метод OnSaveAsync",
     "EditButtonToastMoreSelectContent": "РЕДАКТИРОВАТЬ можно только одну строку",
-    "EditButtonToastNoSaveMethodContent": "Не удается сохранить ОТРЕДАКТИРОВАННІЕ данные. Пожалуйста, определите метод OnSaveAsync",
+    "EditButtonToastNoSaveMethodContent": "Не удается сохранить ОТРЕДАКТИРОВАННЫЕ данные. Пожалуйста, определите метод OnSaveAsync",
     "SaveButtonToastTitle": "Сохранение данных",
     "SaveButtonToastContent": "Не удалось сохранить данные. Пожалуйста, определите метод OnSaveAsync",
     "SaveButtonToastResultContent": "Сохранены данные {0}, автозакрытие после {1}с",
@@ -247,7 +247,7 @@
     "DeleteButtonToastTitle": "Удаление данных",
     "DeleteButtonToastContent": "Выберите строки для УДАЛЕНИЯ. Автозакрытие через {0}с",
     "DeleteButtonToastResultContent": "Удалены данные {0}. Автозакрытие через {1}с",
-    "DataServiceInvalidOperationText": "Невозможно предоставить значение для свойства DataService в типе 'BootstrapBlazor.Components.Table`1[[{0}]]'. Нет зарегистрированной службы типа 'BootstrapBlazor.Components.IDataService`1[{0}]'.",
+    "DataServiceInvalidOperationText": "Невозможно предоставить значение для свойства DataService в типе 'BootstrapBlazor.Components.Table`1[[{0}]]'. Нет зарегистрированного сервиса типа 'BootstrapBlazor.Components.IDataService`1[{0}]'.",
     "NotSetOnTreeExpandErrorMessage": "не установлен параметр OnTreeExpand",
     "UnsetText": "Нет",
     "SortAscText": "По возрастанию",
@@ -298,7 +298,7 @@
   },
   "BootstrapBlazor.Components.Transfer": {
     "LeftPanelText": "Все",
-    "RightPanelText": "Выбранный"
+    "RightPanelText": "Выбранные"
   },
   "BootstrapBlazor.Components.TransferPanel": {
     "SearchPlaceHolderString": "Пожалуйста, введите ...",
@@ -316,6 +316,9 @@
   },
 
 
+  "BootstrapBlazorApp.Shared.Components.CultureChooser": {
+    "Label": "Язык"
+  },
   "BootstrapBlazorApp.Shared.Shared.MainLayout": {
     "AppTitle": "Демо (классификаторы)",
     "SuperAdministrator": "Супер-администратор",
@@ -356,6 +359,6 @@
     "CardRuntimeBody": "<h5>Среда выполнения</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank' > ASP.NET Core Runtime 6.0 </a><br />на Windows<br />Поддерживется также<br /> на Linux, macOS",
     "CardDatabaseBody": "<h5>База данных</h5>Используется Sqlite<br /><br />Также поддерживаются:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI-фреймворк</h5><a href='https://metanit.com/sharp/blazor/1.1.php' target='_blank'> Blazor Server </a><br />Также поддерживается работа в режиме <a  href='https://docs.microsoft.com/ru-ru/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor WebAssembly </a> - одностраничного интерактивного приложения клиентской стороны",
-    "CardUIComponentsBody": "<h5>UI компоненты</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor",
+    "CardUIComponentsBody": "<h5>UI компоненты</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor"
   }
 }

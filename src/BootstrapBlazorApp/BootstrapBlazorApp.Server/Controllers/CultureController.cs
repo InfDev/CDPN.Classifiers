@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BootstrapBlazorApp.Server.Controllers
 {
-    public class HomeController : Controller
+    public class CultureController : Controller
     {
         public IActionResult SetCulture(string culture, string redirectUri)
         {

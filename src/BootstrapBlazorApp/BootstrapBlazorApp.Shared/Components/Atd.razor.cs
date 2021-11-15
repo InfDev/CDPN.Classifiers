@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace BootstrapBlazorApp.Shared
+namespace BootstrapBlazorApp.Shared.Components
 {
     public partial class Atd
     {

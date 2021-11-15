@@ -3,6 +3,20 @@
     width: auto;
 }
 
+.culture-selector {
+    display: flex;
+    align-items: center;
+}
+
+.culture-selector label {
+    margin: 0;
+    color: rgba(255,255,255,.5);
+    display: none;
+}
+
+.culture-selector .select {
+    width: 120px;
+}
 
 #blazor-error-ui {
     background: lightyellow;
@@ -16,12 +30,12 @@
     z-index: 1080;
 }
 
-    #blazor-error-ui .dismiss {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
 
 .page-layout-demo-footer-link {
     color: #ebeef5;
