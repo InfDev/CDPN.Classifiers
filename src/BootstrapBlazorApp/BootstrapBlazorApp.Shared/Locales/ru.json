@@ -321,6 +321,10 @@
   "BootstrapBlazorApp.Shared.Components.CultureChooser": {
     "Label": "Язык"
   },
+  "BootstrapBlazorApp.Shared.Components.Atd": {
+    "Title": "Об административно-территориальном устройстве (АТУ)",
+    "Content": "АТУ базируется на уровнях, категориях и единицах КАТОТТГ (современный КОАТУУ c 2021 года)<br />КАТОТТГ - кодифікатор адміністративно-територіальних одиниць та територій територіальних громад.<br /><a href='https://atu.decentralization.gov.ua/' target='_blank'> Адміністративно-територіальний устрій України </a><br />В идентификаторах/кодах единиц АТУ начальный и конечный индекс определяет место кода в пределах соответстующего уровня.<img src='_content/BootstrapBlazorApp.Shared/images/atdunit-id.svg' /><hr />ATD - Administrative and territorial divisions."
+  },
   "BootstrapBlazorApp.Shared.Shared.MainLayout": {
     "AppTitle": "Демо (классификаторы)",
     "SuperAdministrator": "Супер-администратор",
@@ -362,5 +366,20 @@
     "CardDatabaseBody": "<h5>База данных</h5>Используется Sqlite<br /><br />Также поддерживаются:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI-фреймворк</h5><a href='https://docs.microsoft.com/ru-ru/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Также поддерживается работа в режиме <a  href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a> - одностраничного интерактивного приложения клиентской стороны",
     "CardUIComponentsBody": "<h5>UI компоненты</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Currencies": {
+    "Title": "Валюты согласно ISO 421",
+    "TableFieldNumericCode": "Код (NumericCode)",
+    "TableFieldMinorUnit": "ДР",
+    "TableFieldGroup": "Группа",
+    "TableFieldName": "Наименование"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Countries": {
+    "Title": "Страны согласно ISO 3166-1",
+    "TableFieldAlpha3": "Alpha3",
+    "TableFieldNumericCode": "Код (NumericCode)",
+    "TableFieldGroup": "Группа",
+    "TableFieldName": "Наименование",
+    "TableFieldCurrencyId": "Id валюты"
   }
 }

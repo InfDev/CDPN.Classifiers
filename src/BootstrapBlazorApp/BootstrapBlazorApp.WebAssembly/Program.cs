@@ -58,26 +58,19 @@ namespace BootstrapBlazorApp.WebAssembly
         // https://docs.microsoft.com/ru-ru/aspnet/core/blazor/globalization-localization?view=aspnetcore-6.0&pivots=webassembly
         static async Task SetCultureAsync(WebAssemblyHost host)
         {
-            // Если язык не установлен в localStorage, используйте язык запроса браузера.
+            // Если язык не установлен в localStorage, используется язык, указанный в запросе браузера.
             var jsRuntime = host.Services.GetRequiredService<IJSRuntime>();
-            CultureInfo culture;
-            string cultureName = await jsRuntime.InvokeAsync<string>("$.blazorCulture.get");
-            var options = host.Services.GetRequiredService<IOptions<BootstrapBlazorOptions>>().Value;
+            var cultureName = await jsRuntime.InvokeAsync<string>("$.blazorCulture.get");
+
             if (!string.IsNullOrEmpty(cultureName))
             {
-                culture = new CultureInfo(cultureName);
+                var culture = new CultureInfo(cultureName);
+
+                // Обратите внимание, что в режиме wasm здесь необходимо использовать DefaultThreadCurrentCulture,
+                // CurrentCulture использовать нельзя.
+                CultureInfo.DefaultThreadCurrentCulture = culture;
+                CultureInfo.DefaultThreadCurrentUICulture = culture;
             }
-            else
-            {
-                culture = options.GetSupportedCultures()
-                    .Where(x => x.TwoLetterISOLanguageName == options.DefaultCultureInfo)
-                    .FirstOrDefault();
-                await jsRuntime.InvokeVoidAsync("$.blazorCulture.set", culture.Name);
-            }
-            // Обратите внимание, что в режиме wasm здесь необходимо использовать DefaultThreadCurrentCulture,
-            // CurrentCulture использовать нельзя.
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
         }
     }
 }

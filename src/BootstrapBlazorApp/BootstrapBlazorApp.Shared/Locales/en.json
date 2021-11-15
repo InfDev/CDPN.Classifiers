@@ -7,6 +7,10 @@
   "BootstrapBlazorApp.Shared.Components.CultureChooser": {
     "Label": "Language："
   },
+  "BootstrapBlazorApp.Shared.Components.Atd": {
+    "Title": "About the administrative-territorial divisions (ATD)",
+    "Content": "ATD is based on levels, categories and units of Ukraine classifier<br /><a href='https://atu.decentralization.gov.ua/' target='_blank'> Administrative-territorial divisions of Ukraine</a><br />In the identifiers/codes of ATD units, the starting and ending index determines the place of the code within the corresponding level.<img src='_content/BootstrapBlazorApp.Shared/images/atdunit-id.svg' />"
+  },
   "BootstrapBlazorApp.Shared.Shared.MainLayout": {
     "AppTitle": "Demo (classifiers)",
     "SuperAdministrator": "Super admin",
@@ -42,11 +46,26 @@
   },
   "BootstrapBlazorApp.Shared.Pages.Index": {
     "PageTitle": "Demo web application",
-    "PageDescription": "This app demonstrates variants of the Blazor app and standalone <a href='{0}' target='_blank'> \"Classifiers\" </a> web service, which are developed on open source .NET technologies at the end of 2021. The web service conforms to <a href='https://infdev.com.ua/standards/openapi/' target='_blank'> OpenAPI specification </a>.",
+    "PageDescription": "This app demonstrates variants of the Blazor app and standalone web service <a href='{0}' target='_blank'> \"Classifiers\" </a>, which are developed on open source .NET technologies at the end of 2021. The web service conforms to <a href='https://infdev.com.ua/standards/openapi/' target='_blank'> OpenAPI specification </a>.",
     "CardDevelopmentPlatformBody": "<h5> Development Platform </h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a> <br /> with <a href='https://visualstudio.microsoft.com/en/vs/' target='_ blank'> Visual Studio 2022 </a><br />on Windows 10+<br />using <a href = 'https://github.com/'> GitHub </a>",
     "CardRuntimeBody": "<h5>Runtime</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> ASP.NET Core Runtime 6.0 </a> <br />on Windows<br />Also supported <br /> on Linux, macOS",
     "CardDatabaseBody": "<h5>Database</h5>Used by Sqlite<br /><br />Also supported:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI Framework</h5><a href='https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Running on the client side in the browser is also supported as <a href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a>",
     "CardUIComponentsBody": "<h5>UI Components</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />A set of enterprise-class UI components based on Bootstrap and Blazor"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Currencies": {
+    "Title": "Currencies according to ISO 421",
+    "TableFieldNumericCode": "NumericCode",
+    "TableFieldMinorUnit": "MinorUnit",
+    "TableFieldGroup": "Group",
+    "TableFieldName": "Name"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Countries": {
+    "Title": "Countries according to ISO 3166-1",
+    "TableFieldAlpha3": "Alpha3",
+    "TableFieldNumericCode": "NumericCode",
+    "TableFieldGroup": "Group",
+    "TableFieldName": "Name",
+    "TableFieldCurrencyId": "CurrencyId"
   }
 }

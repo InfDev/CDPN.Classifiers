@@ -6,41 +6,51 @@
 
 <h4>@Localizer["PageTitle"]</h4>
 
-@((MarkupString)Localizer.GetString("PageDescription", openApiDocumentUrl).Value)
-<br /><br />
-<Row ItemsPerRow="ItemsPerRow.Three">
-    <Card IsCenter="true" Class="shadow-sm">
-        <CardBody>
-            @((MarkupString)Localizer["CardDevelopmentPlatformBody"].Value)
-        </CardBody>
-    </Card>
 
-    <Card IsCenter="true" Class="shadow-sm">
-        <CardBody>
-            @((MarkupString)Localizer["CardRuntimeBody"].Value)
-        </CardBody>
-    </Card>
+<div class="row g-3">
+    <div class="card-group">
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer.GetString("PageDescription", openApiDocumentUrl).Value)
+            </div>
+        </div>
+    </div>
+</div>
 
-    <Card IsCenter="true" Class="shadow-sm">
-        <CardBody>
-            @((MarkupString)Localizer["CardDatabaseBody"].Value)
-        </CardBody>
-    </Card>
-</Row>
-<br />
-<Row ItemsPerRow="ItemsPerRow.Two">
-    <Card IsCenter="true" Class="shadow-sm">
-        <CardBody>
-            @((MarkupString)Localizer["CardUIFrameworkBody"].Value)
-        </CardBody>
-    </Card>
+<div class="row g-3 mt-2">
+    <div class="card-group">
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer["CardUIFrameworkBody"].Value)
+            </div>
+        </div>
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer["CardUIComponentsBody"].Value)
+            </div>
+        </div>
+    </div>
+</div>
 
-    <Card IsCenter="true" Class="shadow-sm">
-        <CardBody>
-            @((MarkupString)Localizer["CardUIComponentsBody"].Value)
-        </CardBody>
-    </Card>
-</Row>
+<div class="row g-3 mt-2">
+    <div class="card-group">
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer["CardDevelopmentPlatformBody"].Value)
+            </div>
+        </div>
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer["CardRuntimeBody"].Value)
+            </div>
+        </div>
+        <div class="card text-center shadow-sm mx-2">
+            <div class="card-body">
+                @((MarkupString)Localizer["CardDatabaseBody"].Value)
+            </div>
+        </div>
+    </div>
+</div>
 
 @code {
     private string openApiDocumentUrl;

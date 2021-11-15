@@ -321,6 +321,10 @@
   "BootstrapBlazorApp.Shared.Components.CultureChooser": {
     "Label": "Мова"
   },
+  "BootstrapBlazorApp.Shared.Components.Atd": {
+    "Title": "Про адміністративно-територіальний устрій (АТУ)",
+    "Content": "АТУ базується на рівнях, категоріях та одиницях КАТОТТГ (сучасний КОАТУУ з 2021 року)<br />КАТОТТГ - кодифікатор адміністративно-територіальних одиниць та територій територіальних громад.<br /><a href='https://atu.decentralization.gov .ua/' target='_blank'> Адміністративно-територіальний устрій України </a><br />В ідентифікаторах/кодах одиниць АТУ початковий та кінцевий індекс визначає місце коду в межах відповідного рівня.<img src='_content/BootstrapBlazorApp.Shared/images/atdunit-id.svg' /><hr />ATD - Administrative and territorial divisions."
+  },
   "BootstrapBlazorApp.Shared.Shared.MainLayout": {
     "AppTitle": "Демо (класифікатори)",
     "SuperAdministrator": "Супер-адміністратор",
@@ -362,5 +366,20 @@
     "CardDatabaseBody": "<h5>База даних</h5>Використовується Sqlite<br /><br />Також підтримуються:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI-фреймворк</h5><a href='https://docs.microsoft.com/ru-ru/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Також підтримується робота в режимі <a href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a> - односторінкового інтерактивного застосування клієнтської сторони",
     "CardUIComponentsBody": "<h5>UI компоненти</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набір компонентів інтерфейсу користувача корпоративного класу на основі Bootstrap і Blazor"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Currencies": {
+    "Title": "Валюти згідно ISO 421",
+    "TableFieldNumericCode": "Код (NumericCode)",
+    "TableFieldMinorUnit": "ДР",
+    "TableFieldGroup": "Група",
+    "TableFieldName": "Найменування"
+  },
+  "BootstrapBlazorApp.Shared.Pages.Countries": {
+    "Title": "Країни згідно ISO 3166-1",
+    "TableFieldAlpha3": "Alpha3",
+    "TableFieldNumericCode": "Код (NumericCode)",
+    "TableFieldGroup": "Група",
+    "TableFieldName": "Найменування",
+    "TableFieldCurrencyId": "Id валюти"
   }
 }

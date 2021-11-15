@@ -10,6 +10,7 @@ using Microsoft.JSInterop;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BootstrapBlazorApp.Shared.Components
@@ -74,8 +75,18 @@ namespace BootstrapBlazorApp.Shared.Components
         }
 
         private static string GetDisplayName(CultureInfo culture)
-        {
-            return culture.NativeName.Split(' ')[0];
+        {            
+            var result = culture.NativeName.Split(new char[] { ' ', '-' })[0].ToLower();
+            if (OperatingSystem.IsBrowser())
+            {
+                switch (result)
+                {
+                    case "en": result = "English"; break;
+                    case "ru": result = "Русский"; break;
+                    case "uk": result = "Українська"; break;
+                }
+            }
+            return result;
         }
     }
 }

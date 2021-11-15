@@ -2,18 +2,18 @@
 
 @using CDPN.Classifiers.Client.Models;
 
-<h4>Страны согласно ISO 3166-1</h4>
+<h4>@Localizer["Title"]</h4>
 
 <div class="table scroll">
     <Table TItem="Country" IsPagination="true" PageItemsSource="@PageItemsSource" RenderMode="TableRenderMode.Table"
            IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
         <TableColumns>
             <TableColumn @bind-Field="@context.Id" Text="Id (Alpha2)" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.Alpha3" Text="Alpha3" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.NumericCode" Text="Код (NumericCode)" Sortable=true Filterable=true></TableColumn>
-            <TableColumn @bind-Field="@context.Group" Text="Группа" Sortable=true Filterable=true></TableColumn>
-            <TableColumn @bind-Field="@context.Name" Text="Наименование" Sortable=true Filterable=true></TableColumn>
-            <TableColumn @bind-Field="@context.CurrencyId" Text="Id валюты" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Alpha3" Text="@Localizer["TableFieldAlpha3"]" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.NumericCode" Text="@Localizer["TableFieldNumericCode"]" Sortable=true Filterable=true></TableColumn>
+            <TableColumn @bind-Field="@context.Group" Text="@Localizer["TableFieldGroup"]" Sortable=true Filterable=true></TableColumn>
+            <TableColumn @bind-Field="@context.Name" Text="@Localizer["TableFieldName"]" Sortable=true Filterable=true></TableColumn>
+            <TableColumn @bind-Field="@context.CurrencyId" Text="@Localizer["TableFieldCurrencyId"]" Sortable=true Filterable=true ></TableColumn>
         </TableColumns>
     </Table>
 </div>
