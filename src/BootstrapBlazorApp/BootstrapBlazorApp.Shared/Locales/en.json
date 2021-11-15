@@ -1,4 +1,9 @@
 ﻿{
+  // ↓↓↓ Begin for BootstrapBlazor
+
+  // ↑↑↑ End for BootstrapBlazor
+
+  // ↓↓↓ Begin for App
   "BootstrapBlazorApp.Shared.Components.CultureChooser": {
     "Label": "Language："
   },
@@ -41,7 +46,7 @@
     "CardDevelopmentPlatformBody": "<h5> Development Platform </h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a> <br /> with <a href='https://visualstudio.microsoft.com/en/vs/' target='_ blank'> Visual Studio 2022 </a><br />on Windows 10+<br />using <a href = 'https://github.com/'> GitHub </a>",
     "CardRuntimeBody": "<h5>Runtime</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> ASP.NET Core Runtime 6.0 </a> <br />on Windows<br />Also supported <br /> on Linux, macOS",
     "CardDatabaseBody": "<h5>Database</h5>Used by Sqlite<br /><br />Also supported:<br />SqlServer, MySql, PostgreSQL",
-    "CardUIFrameworkBody": "<h5>UI Framework</h5><a href='https://metanit.com/sharp/blazor/1.1.php' target='_blank'> Blazor Server </a><br />Running on the client side in the browser is also supported as <a href='https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor WebAssembly </a>",
+    "CardUIFrameworkBody": "<h5>UI Framework</h5><a href='https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Running on the client side in the browser is also supported as <a href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a>",
     "CardUIComponentsBody": "<h5>UI Components</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />A set of enterprise-class UI components based on Bootstrap and Blazor"
   }
 }
