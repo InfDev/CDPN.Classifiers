@@ -48,7 +48,7 @@
     "PageTitle": "Demo web application",
     "PageDescription": "This app demonstrates variants of the Blazor app and standalone web service <a href='{0}' target='_blank'> \"Classifiers\" </a>, which are developed on open source .NET technologies at the end of 2021. The web service conforms to <a href='https://infdev.com.ua/standards/openapi/' target='_blank'> OpenAPI specification </a>.",
     "CardDevelopmentPlatformBody": "<h5> Development Platform </h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a> <br /> with <a href='https://visualstudio.microsoft.com/en/vs/' target='_ blank'> Visual Studio 2022 </a><br />on Windows 10+<br />using <a href = 'https://github.com/'> GitHub </a>",
-    "CardRuntimeBody": "<h5>Runtime</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> ASP.NET Core Runtime 6.0 </a> <br />on Windows<br />Also supported <br /> on Linux, macOS",
+    "CardRuntimeBody": "<h5>Runtime</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> ASP.NET Core Runtime 6.0 </a> <br />on Windows, Linux, macOS<br />Also supported in browser: <a href='classifiers-ui-wasm.infdev.com.ua' target='_blank'> WebAssembly </a>",
     "CardDatabaseBody": "<h5>Database</h5>Used by Sqlite<br /><br />Also supported:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI Framework</h5><a href='https://docs.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Running on the client side in the browser is also supported as <a href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a>",
     "CardUIComponentsBody": "<h5>UI Components</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />A set of enterprise-class UI components based on Bootstrap and Blazor"
@@ -67,5 +67,29 @@
     "TableFieldGroup": "Group",
     "TableFieldName": "Name",
     "TableFieldCurrencyId": "CurrencyId"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdLevels": {
+    "Title": "ATD Levels",
+    "TableFieldName": "Name",
+    "TableFieldInUnitIdStartIndex": "Begin index in Id",
+    "TableFieldInUnitIdEndIndex": "End index in Id"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdCategories": {
+    "Title": "ATD categories",
+    "TableFieldName": "Name"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdUnits": {
+    "Title": "ATD Units",
+    "TableFieldParentId": "ParentId",
+    "TableFieldAtdLevelId": "Level",
+    "TableFieldAtdCategoryId": "Category",
+    "TableFieldName": "Name"
+  },
+  "BootstrapBlazorApp.Shared.Pages.PaperSizes": {
+    "Title": "ISO 216 and ISO 269 paper and envelope sizes",
+    "TableFieldFormat": "Format",
+    "TableFieldWidth": "Width",
+    "TableFieldHeight": "Height",
+    "TableFieldUse": "Use"
   }
 }

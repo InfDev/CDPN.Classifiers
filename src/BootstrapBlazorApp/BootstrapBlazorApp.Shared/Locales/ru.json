@@ -361,10 +361,10 @@
   "BootstrapBlazorApp.Shared.Pages.Index": {
     "PageTitle": "Демо веб-приложения",
     "PageDescription": "Это приложение демонстрирует варианты Blazor-приложения и автономного <a href='{0}' target='_blank'> веб-сервиса \"Классификаторы\" </a>, которые разработаны на открытых технологиях .NET конца 2021 года. Веб-сервис соответствует <a href='https://infdev.com.ua/standards/openapi/' target='_blank'> спецификации OpenAPI </a>.",
-    "CardDevelopmentPlatformBody": "<h5>Платформа разработки</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a><br /> с <a href='https://visualstudio.microsoft.com/ru/vs/' target='_blank'> Visual Studio 2022 </a><br /> на Windows 10+<br /> с использованием <a href='https://github.com/'> GitHub </a>",
-    "CardRuntimeBody": "<h5>Среда выполнения</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank' > ASP.NET Core Runtime 6.0 </a><br />на Windows<br />Поддерживется также<br /> на Linux, macOS",
     "CardDatabaseBody": "<h5>База данных</h5>Используется Sqlite<br /><br />Также поддерживаются:<br />SqlServer, MySql, PostgreSQL",
     "CardUIFrameworkBody": "<h5>UI-фреймворк</h5><a href='https://docs.microsoft.com/ru-ru/aspnet/core/blazor/hosting-models?view=aspnetcore-6.0' target='_blank'> Blazor Server </a><br />Также поддерживается работа в режиме <a  href='https://classifiers-ui-wasm.infdev.com.ua/' target='_blank'> Blazor WebAssembly </a> - одностраничного интерактивного приложения клиентской стороны",
+    "CardDevelopmentPlatformBody": "<h5>Платформа разработки</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank'> .NET SDK 6.0 </a><br /> с <a href='https://visualstudio.microsoft.com/ru/vs/' target='_blank'> Visual Studio 2022 </a><br /> на Windows 10+<br /> с использованием <a href='https://github.com/'> GitHub </a>",
+    "CardRuntimeBody": "<h5>Среда выполнения</h5><a href='https://dotnet.microsoft.com/download/dotnet/6.0' target='_blank' > ASP.NET Core Runtime 6.0 </a><br />на Windows, Linux, macOS<br />Поддерживается в браузере: <a href='https://classifiers-ui-wasm.infdev.com.ua' target='_blank'> WebAssembly </a>",
     "CardUIComponentsBody": "<h5>UI компоненты</h5><a href='https://www.blazor.zone/' target='_blank'> BootstrapBlazor </a><br />Набор компонентов пользовательского интерфейса корпоративного класса на основе Bootstrap и Blazor"
   },
   "BootstrapBlazorApp.Shared.Pages.Currencies": {
@@ -381,5 +381,29 @@
     "TableFieldGroup": "Группа",
     "TableFieldName": "Наименование",
     "TableFieldCurrencyId": "Id валюты"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdLevels": {
+    "Title": "Уровни АТУ",
+    "TableFieldName": "Наименование",
+    "TableFieldInUnitIdStartIndex": "Нач. индекс в Id",
+    "TableFieldInUnitIdEndIndex": "Кон. индекс в Id"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdCategories": {
+    "Title": "Категории АТУ",
+    "TableFieldName": "Наименование"
+  },
+  "BootstrapBlazorApp.Shared.Pages.AtdUnits": {
+    "Title": "Единицы АТУ",
+    "TableFieldParentId": "Id родителя",
+    "TableFieldAtdLevelId": "Уровень",
+    "TableFieldAtdCategoryId": "Категория",
+    "TableFieldName": "Наименование"
+  },
+  "BootstrapBlazorApp.Shared.Pages.PaperSizes": {
+    "Title": "Размеры бумаги и конвертов согласно ISO 216 и ISO 269",
+    "TableFieldFormat": "Формат",
+    "TableFieldWidth": "Ширина",
+    "TableFieldHeight": "Высота",
+    "TableFieldUse": "Использование"
   }
 }

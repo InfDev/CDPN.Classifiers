@@ -2,7 +2,7 @@
 
 @using CDPN.Classifiers.Client.Models;
 
-<h4>Единицы АТУ</h4>
+<h4>@Localizer["Title"]</h4>
 
 <Atd />
 
@@ -11,10 +11,10 @@
            IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
         <TableColumns>
             <TableColumn @bind-Field="@context.Id" Text="Id" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.ParentId" Text="Id родителя" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.AtdLevelId" Text="Уровень" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.AtdCategoryId" Text="Категория" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.Name" Text="Наименование" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.ParentId" Text="@Localizer["TableFieldParentId"]" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.AtdLevelId" Text="@Localizer["TableFieldAtdLevelId"]" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.AtdCategoryId" Text="@Localizer["TableFieldAtdCategoryId"]" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.Name" Text="@Localizer["TableFieldName"]" Sortable=true Filterable=true ></TableColumn>
         </TableColumns>
     </Table>
 </div>

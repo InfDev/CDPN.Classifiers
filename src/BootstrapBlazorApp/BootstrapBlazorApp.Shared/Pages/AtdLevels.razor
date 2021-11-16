@@ -2,7 +2,7 @@
 
 @using CDPN.Classifiers.Client.Models;
 
-<h4>Уровни АТУ</h4>
+<h4>@Localizer["Title"]</h4>
 
 <Atd />
 
@@ -11,9 +11,9 @@
            IsStriped="true" IsBordered="true" UseInjectDataService="true" OnQueryAsync="OnQueryAsync" >
         <TableColumns>
             <TableColumn @bind-Field="@context.Id" Text="Id" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.Name" Text="Наименование" Sortable=true Filterable=true ></TableColumn>
-            <TableColumn @bind-Field="@context.InUnitIdStartIndex" Text="Нач. индекс в Id" ></TableColumn>
-            <TableColumn @bind-Field="@context.InUnitIdEndIndex" Text="Кон. индекс в Id" ></TableColumn>
+            <TableColumn @bind-Field="@context.Name" Text="@Localizer["TableFieldName"]" Sortable=true Filterable=true ></TableColumn>
+            <TableColumn @bind-Field="@context.InUnitIdStartIndex" Text="@Localizer["TableFieldInUnitIdStartIndex"]" ></TableColumn>
+            <TableColumn @bind-Field="@context.InUnitIdEndIndex" Text="@Localizer["TableFieldInUnitIdEndIndex"]" ></TableColumn>
         </TableColumns>
     </Table>
 </div>
