@@ -1,24 +1,26 @@
+Language: [English](README.md) | [Русский](README.ru.md) | [Українська](README.uk.md)
+
 # CDPN Classifiers
 
-## Общие сведения 
+## General information 
 
-Общие классификаторы для комплекса CDPN:
+General classifiers for the complex CDPN:
 
-- Валюты согласно ISO 4217
-- Страны согласно ISO 3166-1
-- Уровни АТУ
-- Категории АТУ
-- Единицы АТУ (уровни 0 и 1)
-- Размеры бумаги и конвертов согласно ISO 216 и ISO 269
+- Currencies according to ISO 4217
+- Countries according to ISO 3166-1
+- ATD levels
+- ATD categories
+- ATD units (levels 0 and 1)
+- Sizes of paper and envelopes according to ISO 216 и ISO 269
 
-Данные классификаторов на украинском языке.
+Classifier data in Ukrainian.
 
-АТУ - административно-территориальное устройство
+ATD - administrative-territorial divisions
 
-## Демо
+## Demo
 
 - [Classifiers API](https://classifiers-api.infdev.com.ua/swagger/)
-- [Classifiers UI. Размещение на сервере](https://classifiers-ui.infdev.com.ua/)
-- [Classifiers UI WASM. Размещение на клиенте](https://classifiers-ui-wasm.infdev.com.ua/)
+- [Classifiers UI. Server hosting](https://classifiers-ui.infdev.com.ua/)
+- [Classifiers UI WASM. Client (browser) hosting](https://classifiers-ui-wasm.infdev.com.ua/)
 
-![КДП-К](./assets/images/cdpn-c.png)
+![CDPN-C](./assets/images/cdpn-c.png)
