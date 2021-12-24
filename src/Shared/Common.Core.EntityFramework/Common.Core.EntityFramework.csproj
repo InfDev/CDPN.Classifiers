@@ -9,7 +9,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Gridify.EntityFramework" Version="2.3.2" />
+		<PackageReference Include="Gridify.EntityFramework" Version="2.4.8" />
 	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Core\Common.Core.csproj" />
